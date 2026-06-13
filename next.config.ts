@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
+import { defineConfig } from "@opennextjs/cloudflare";
 import path from "path";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  turbopack: {
-    root: path.resolve(__dirname, '..'),
-  },
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -37,4 +35,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default defineConfig(nextConfig);

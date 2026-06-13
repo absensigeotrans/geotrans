@@ -1,5 +1,5 @@
 {
-  "name": "geoattend-pro",
+  "name": "geotrans",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "supabase:link": "supabase link --project-ref yoykktgggvvoigrbtvhq",
     "supabase:migrate": "supabase db push",
     "supabase:reset": "supabase db reset",
@@ -30,6 +32,7 @@
     "swr": "^2.4.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.19.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
