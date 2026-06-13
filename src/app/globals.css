@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-red: #DC2626;
+  --primary-blue: #0A57A4;
+  --ptk-navy: #0A57A4;
+  --ptk-red: #ED1B2F;
+  --ptk-green: #ACC42A;
+  --gradient-primary: linear-gradient(135deg, #0A57A4 0%, #0077B6 100%);
+  --gradient-primary-reverse: linear-gradient(135deg, #0077B6 0%, #0A57A4 100%);
+  --gradient-navy: linear-gradient(135deg, #0A57A4 0%, #052c56 100%);
+  --gradient-ocean: linear-gradient(135deg, #03045E 0%, #0077B6 50%, #00B4D8 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-red: var(--primary-red);
+  --color-primary-blue: var(--primary-blue);
+  --color-ptk-navy: var(--ptk-navy);
+  --color-ptk-red: var(--ptk-red);
+  --color-ptk-green: var(--ptk-green);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Override blue scale — ocean navy theme */
+  --color-blue-50: #eef2f7;
+  --color-blue-100: #d0dae8;
+  --color-blue-200: #b0c2d8;
+  --color-blue-300: #8aa6c5;
+  --color-blue-400: #4a7eb5;
+  --color-blue-500: #0A57A4;
+  --color-blue-600: #09488a;
+  --color-blue-700: #073a70;
+  --color-blue-800: #052c56;
+  --color-blue-900: #031e3c;
+  --color-blue-950: #010f20;
+
+  /* Override gray and slate variables for high-contrast dark text */
+  --color-gray-400: #374151;
+  --color-gray-500: #1f2937;
+  --color-gray-600: #111827;
+  --color-gray-700: #000000;
+  --color-gray-800: #000000;
+  --color-gray-900: #000000;
+
+  --color-slate-400: #374151;
+  --color-slate-500: #1f2937;
+  --color-slate-600: #111827;
+  --color-slate-700: #000000;
+  --color-slate-800: #000000;
+  --color-slate-900: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Custom gradient utilities — ocean navy theme */
+.bg-gradient-red-blue {
+  background: linear-gradient(135deg, #0A57A4 0%, #0077B6 100%);
+}
+
+.bg-gradient-blue-red {
+  background: linear-gradient(135deg, #0077B6 0%, #0A57A4 100%);
+}
+
+.text-gradient-red-blue {
+  background: linear-gradient(135deg, #0A57A4 0%, #0077B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-red-blue-hover {
+  background: linear-gradient(135deg, #0A57A4 0%, #0077B6 100%);
+}
+
+.bg-gradient-red-blue-hover:hover {
+  background: linear-gradient(135deg, #09488a 0%, #005a94 100%);
+}
+
+.bg-gradient-navy {
+  background: linear-gradient(135deg, #0A57A4 0%, #052c56 100%);
+}
+
+.bg-gradient-navy-hover:hover {
+  background: linear-gradient(135deg, #09488a 0%, #042040 100%);
+}
+
+.text-gradient-navy {
+  background: linear-gradient(135deg, #0A57A4 0%, #052c56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-overlay-navy {
+  background: linear-gradient(135deg, rgba(10, 87, 164, 0.92) 0%, rgba(5, 44, 86, 0.88) 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Animation Keyframes ===== */
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Slide Up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Float Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 6s ease-in-out infinite;
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-sparkle-delay {
+  animation: sparkle 2s ease-in-out infinite 0.5s;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Smooth hover transitions for interactive elements */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Glassmorphism utility classes */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.text-white\/60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}

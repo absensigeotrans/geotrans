@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\new pertamna\\\\lib\" -Recurse -File)",
+      "Bash(Select-Object FullName, Length)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(npx tsc *)",
+      "WebSearch"
+    ]
+  }
+}
