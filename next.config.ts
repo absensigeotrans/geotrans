@@ -1,4 +1,3 @@
-import { defineConfig } from "@opennextjs/cloudflare";
 import path from "path";
 import type { NextConfig } from "next";
 
@@ -35,4 +34,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default defineConfig(nextConfig);
+export default nextConfig;
