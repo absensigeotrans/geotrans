@@ -15,7 +15,8 @@ import { Attendance, AttendanceStatus, ShiftType } from '@/types';
 import { format } from 'date-fns';
 import { getWIBDaysAgo, getWIBDate, formatWIBTime, formatWIBDate, formatWIBTimeWithSeconds, formatWIBDateDisplay, formatWIBDateHeader } from '@/lib/timezone';
 import { formatDistance } from '@/lib/utils';
-import { Download, FileText, CheckCircle, Clock, XCircle, FileDown, AlertTriangle, Database, Sun, Sunset, Trash2, Calendar, Timer, FileSpreadsheet, Minus, ChevronDown, ChevronUp } from 'lucide-react';
+import { Download, FileText, CheckCircle, Clock, XCircle, FileDown, AlertTriangle, Database, Sun, Sunset, Trash2, Calendar, Timer, FileSpreadsheet, Minus, ChevronDown, ChevronUp, Plus, Edit2 } from 'lucide-react';
+import { ManualAttendanceModal } from '@/components/ui/ManualAttendanceModal';
 
 const PAGE_SIZE = 100;
 
@@ -28,7 +29,7 @@ function formatDuration(minutes: number | null): string {
 
 export default function ReportsPage() {
   const { profile } = useAuth();
-  const { records, loading, fetchReportWithUsers, getStats, error, getShiftLabel, deleteByDate } = useReports();
+  const { records, loading, fetchReportWithUsers, getStats, error, getShiftLabel, deleteByDate, saveManualAttendance } = useReports();
 
   const [from, setFrom] = useState(() => getWIBDaysAgo(30));
   const [to, setTo] = useState(() => getWIBDate());
@@ -47,6 +48,20 @@ export default function ReportsPage() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteDate, setDeleteDate] = useState('');
   const [deleting, setDeleting] = useState(false);
+
+  // Manual attendance modal state
+  const [isManualModalOpen, setIsManualModalOpen] = useState(false);
+  const [manualModalData, setManualModalData] = useState<any>(null);
+
+  const handleSaveManualAttendance = async (data: any) => {
+    const result = await saveManualAttendance(data);
+    if (result.success) {
+      toast.success(result.message || 'Berhasil menyimpan absensi');
+      load(from, to, status, 1, search);
+    } else {
+      throw new Error(result.error || 'Failed to save');
+    }
+  };
 
   // Grouped cards and expanded states
   const [expandedDates, setExpandedDates] = useState<Record<string, boolean>>({});
@@ -576,6 +591,24 @@ export default function ReportsPage() {
         );
       },
     },
+    {
+      key: 'actions',
+      header: 'Aksi',
+      render: (row: any) => (
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => {
+            setManualModalData(row);
+            setIsManualModalOpen(true);
+          }}
+          className="text-blue-600 hover:text-blue-800 p-1 h-auto"
+          title="Edit Absensi"
+        >
+          <Edit2 className="w-4 h-4" />
+        </Button>
+      ),
+    },
   ];
 
   return (
@@ -659,9 +692,18 @@ export default function ReportsPage() {
               Large export ({filteredRecords.length} records)
             </span>
           )}
-          {/* Delete Button */}
-          <div className="ml-auto">
-            <Button variant="danger" onClick={openDeleteModal}>
+          {/* Action Buttons */}
+          <div className="ml-auto flex items-center gap-2">
+            <Button
+              onClick={() => {
+                setManualModalData(null);
+                setIsManualModalOpen(true);
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1"
+            >
+              <Plus className="w-4 h-4" /> Tambah Manual
+            </Button>
+            <Button variant="danger" onClick={openDeleteModal} className="flex items-center gap-1">
               <Trash2 className="w-4 h-4" /> Hapus Data
             </Button>
           </div>
@@ -791,11 +833,17 @@ export default function ReportsPage() {
         </div>
       )}
 
-      {/* Pagination */}
       <Pagination
         currentPage={page}
         totalPages={Math.ceil(total / PAGE_SIZE)}
         onPageChange={(p) => { setPage(p); load(from, to, status, p, search); }}
+      />
+
+      <ManualAttendanceModal
+        isOpen={isManualModalOpen}
+        onClose={() => setIsManualModalOpen(false)}
+        onSave={handleSaveManualAttendance}
+        initialData={manualModalData}
       />
 
       {/* Delete Confirmation Modal */}

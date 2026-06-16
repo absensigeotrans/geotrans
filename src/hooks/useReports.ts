@@ -370,17 +370,16 @@ export function useReports() {
     try {
       const { start, end } = getWIBDateRange(date);
 
+      const { error: deleteError, data: deletedData } = await supabase
+        .from('attendance')
+        .delete()
+        .gte('check_in_time', start)
+        .lte('check_in_time', end)
+        .select('id');
 
-       const { error: deleteError, data: deletedData } = await supabase
-          .from('attendance')
-          .delete()
-          .gte('check_in_time', start)
-          .lte('check_in_time', end)
-          .select('id');
-
-       if (deleteError) {
-         throw deleteError;
-       }
+      if (deleteError) {
+        throw deleteError;
+      }
 
       // Clear local records since data changed
       setRecords([]);
@@ -388,6 +387,52 @@ export function useReports() {
     } catch (err: any) {
       const msg = err?.message || err?.details || 'Failed to delete records';
       console.error('deleteByDate catch error:', msg);
+      setError(msg);
+      return { success: false, error: msg };
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Save manual attendance (Insert or Update)
+  const saveManualAttendance = useCallback(async (data: Partial<AttendanceWithProfile>) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const payload: any = {
+        user_id: data.user_id,
+        check_in_time: data.check_in_time,
+        check_out_time: data.check_out_time || null,
+        status: data.status,
+        work_status: data.work_status,
+        is_valid: true,
+        is_mocked: false,
+        distance_from_office: 0,
+      };
+
+      if (data.id) {
+        // Update
+        const { error: updateError } = await supabase
+          .from('attendance')
+          .update(payload)
+          .eq('id', data.id);
+        if (updateError) throw updateError;
+        return { success: true, message: 'Berhasil mengubah data absensi' };
+      } else {
+        // Insert
+        // Admin inserts shouldn't care about coordinates, but we supply 0
+        payload.check_in_latitude = 0;
+        payload.check_in_longitude = 0;
+        
+        const { error: insertError } = await supabase
+          .from('attendance')
+          .insert(payload);
+        if (insertError) throw insertError;
+        return { success: true, message: 'Berhasil menambahkan data absensi manual' };
+      }
+    } catch (err: any) {
+      const msg = err?.message || 'Gagal menyimpan data absensi';
+      console.error('saveManualAttendance catch error:', msg);
       setError(msg);
       return { success: false, error: msg };
     } finally {
@@ -407,5 +452,6 @@ export function useReports() {
     getEmployeeSummary,
     getShiftLabel,
     deleteByDate,
+    saveManualAttendance,
   };
 }
