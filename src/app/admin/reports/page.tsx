@@ -602,7 +602,7 @@ export default function ReportsPage() {
             setManualModalData(row);
             setIsManualModalOpen(true);
           }}
-          className="text-blue-600 hover:text-blue-800 p-1 h-auto"
+          className="!text-black hover:!text-gray-700 p-1 h-auto"
           title="Edit Absensi"
         >
           <Edit2 className="w-4 h-4" />
