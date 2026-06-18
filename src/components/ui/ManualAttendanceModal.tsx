@@ -159,7 +159,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
                       placeholder="Cari nama karyawan..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-4 py-2 border rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                      className="w-full pl-9 pr-4 py-2 border rounded-xl text-sm text-black focus:ring-2 focus:ring-blue-500 outline-none"
                     />
                   </div>
                   <div className="border rounded-xl max-h-40 overflow-y-auto bg-gray-50 p-1">
@@ -208,7 +208,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
                   required
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 border rounded-xl text-black focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
               <div>
@@ -216,7 +216,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full px-4 py-2 border rounded-xl text-black focus:ring-2 focus:ring-blue-500 outline-none"
                 >
                   <option value="present">Hadir</option>
                   <option value="late">Terlambat</option>
@@ -239,7 +239,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
                     required
                     value={checkInTime}
                     onChange={(e) => setCheckInTime(e.target.value)}
-                    className="w-full pl-9 pr-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full pl-9 pr-4 py-2 border rounded-xl text-black focus:ring-2 focus:ring-blue-500 outline-none"
                   />
                 </div>
               </div>
@@ -254,7 +254,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
                     step="1"
                     value={checkOutTime}
                     onChange={(e) => setCheckOutTime(e.target.value)}
-                    className="w-full pl-9 pr-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="w-full pl-9 pr-4 py-2 border rounded-xl text-black focus:ring-2 focus:ring-blue-500 outline-none"
                   />
                 </div>
               </div>
@@ -266,7 +266,7 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
               <select
                 value={workStatus}
                 onChange={(e) => setWorkStatus(e.target.value)}
-                className="w-full px-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full px-4 py-2 border rounded-xl text-black focus:ring-2 focus:ring-blue-500 outline-none"
               >
                 <option value="WFO">WFO (Work From Office)</option>
                 <option value="WFH">WFH (Work From Home)</option>
