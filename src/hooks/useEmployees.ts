@@ -60,15 +60,19 @@ export function useEmployees() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchEmployees = useCallback(async (page = 1, limit = 50, search = '') => {
+  const fetchEmployees = useCallback(async (page = 1, limit = 50, search = '', includeAdmins = false) => {
     setLoading(true);
     setError(null);
     try {
       let query = supabase
         .from('profiles')
-        .select('*', { count: 'exact' })
-        .not('role', 'eq', 'admin')
-        .order('created_at', { ascending: false })
+        .select('*', { count: 'exact' });
+
+      if (!includeAdmins) {
+        query = query.not('role', 'eq', 'admin');
+      }
+
+      query = query.order('created_at', { ascending: false })
         .range((page - 1) * limit, page * limit - 1);
 
       if (search) {
@@ -188,13 +192,17 @@ export function useEmployees() {
     }
   }, [fetchEmployees]);
 
-  const fetchAllEmployees = useCallback(async (search = '') => {
+  const fetchAllEmployees = useCallback(async (search = '', includeAdmins = false) => {
     try {
       let query = supabase
         .from('profiles')
-        .select('*')
-        .not('role', 'eq', 'admin')
-        .order('created_at', { ascending: false });
+        .select('*');
+
+      if (!includeAdmins) {
+        query = query.not('role', 'eq', 'admin');
+      }
+
+      query = query.order('created_at', { ascending: false });
 
       if (search) {
         query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
