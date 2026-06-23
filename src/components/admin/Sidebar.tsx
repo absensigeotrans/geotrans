@@ -28,6 +28,7 @@ import {
   Image,
   UserCog,
   Lock,
+  Award,
 } from 'lucide-react';
 
 const navItems = [
@@ -38,6 +39,7 @@ const navItems = [
   { href: '/admin/reports', icon: FileText, label: 'Laporan Harian' },
   { href: '/admin/monthly-recap', icon: CalendarDays, label: 'Rekap Bulanan' },
   { href: '/admin/attendance-rate', icon: BarChart3, label: 'Tingkat Kehadiran' },
+  { href: '/admin/performance', icon: Award, label: 'Performa Karyawan' },
   { href: '/admin/leave-requests', icon: CalendarX, label: 'Pengajuan Cuti', badgeKey: 'pendingLeaves' },
   { href: '/admin/driver-requests', icon: UserCog, label: 'Pengajuan Driver', badgeKey: 'pendingDriverRequests' },
   { href: '/admin/password-requests', icon: Lock, label: 'Pengajuan Password', badgeKey: 'pendingPasswordRequests' },

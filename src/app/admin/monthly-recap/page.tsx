@@ -392,7 +392,7 @@ export default function MonthlyRecapPage() {
         if (originalStatus === 'absent') {
           if (newStatus !== 'absent') {
             const checkIn = `${dateStr}T01:00:00+07:00`;
-            await supabase.from('attendance').insert({
+            const { error: insertErr } = await supabase.from('attendance').insert({
               user_id: emp.id,
               status: newStatus,
               check_in_time: checkIn,
@@ -402,9 +402,10 @@ export default function MonthlyRecapPage() {
               is_valid: true,
               is_mocked: false,
             });
+            if (insertErr) throw insertErr;
           }
         } else if (newStatus === 'absent') {
-          const { data: existing } = await supabase
+          const { data: existing, error: selectErr } = await supabase
             .from('attendance')
             .select('id')
             .eq('user_id', emp.id)
@@ -412,11 +413,14 @@ export default function MonthlyRecapPage() {
             .lt('check_in_time', `${dateStr}T23:59:59+07:00`)
             .maybeSingle();
 
+          if (selectErr) throw selectErr;
+
           if (existing) {
-            await supabase.from('attendance').delete().eq('id', existing.id);
+            const { error: deleteErr } = await supabase.from('attendance').delete().eq('id', existing.id);
+            if (deleteErr) throw deleteErr;
           }
         } else if (getChoiceFromStatus(originalStatus) !== newStatus) {
-          const { data: existing } = await supabase
+          const { data: existing, error: selectErr } = await supabase
             .from('attendance')
             .select('id')
             .eq('user_id', emp.id)
@@ -424,11 +428,14 @@ export default function MonthlyRecapPage() {
             .lt('check_in_time', `${dateStr}T23:59:59+07:00`)
             .maybeSingle();
 
+          if (selectErr) throw selectErr;
+
           if (existing) {
-            await supabase.from('attendance').update({ status: newStatus }).eq('id', existing.id);
+            const { error: updateErr } = await supabase.from('attendance').update({ status: newStatus }).eq('id', existing.id);
+            if (updateErr) throw updateErr;
           } else {
             const checkIn = `${dateStr}T01:00:00+07:00`;
-            await supabase.from('attendance').insert({
+            const { error: insertErr } = await supabase.from('attendance').insert({
               user_id: emp.id,
               status: newStatus,
               check_in_time: checkIn,
@@ -438,6 +445,7 @@ export default function MonthlyRecapPage() {
               is_valid: true,
               is_mocked: false,
             });
+            if (insertErr) throw insertErr;
           }
         }
       }
@@ -699,10 +707,11 @@ export default function MonthlyRecapPage() {
   async function addGlobalException() {
     if (!exceptionDate) return toast.error('Pilih tanggal terlebih dahulu');
     try {
-      await supabase.from('global_exception_dates').insert({
+      const { error } = await supabase.from('global_exception_dates').insert({
         date: exceptionDate,
         reason: exceptionReason || 'Hari Libur',
       });
+      if (error) throw error;
       toast.success('Hari libur global berhasil ditambahkan');
       setExceptionDate('');
       setExceptionReason('');
@@ -715,7 +724,8 @@ export default function MonthlyRecapPage() {
 
   async function removeGlobalException(date: string) {
     try {
-      await supabase.from('global_exception_dates').delete().eq('date', date);
+      const { error } = await supabase.from('global_exception_dates').delete().eq('date', date);
+      if (error) throw error;
       toast.success('Hari libur dihapus');
       setShowExceptionModal(false);
       refresh();
@@ -728,11 +738,12 @@ export default function MonthlyRecapPage() {
     if (!exceptionDate) return toast.error('Pilih tanggal terlebih dahulu');
     if (!exceptionUserId) return toast.error('Pilih karyawan terlebih dahulu');
     try {
-      await supabase.from('user_exception_dates').insert({
+      const { error } = await supabase.from('user_exception_dates').insert({
         user_id: exceptionUserId,
         date: exceptionDate,
         reason: exceptionReason || 'Cuti / Izin',
       });
+      if (error) throw error;
       toast.success('Hari libur per karyawan berhasil ditambahkan');
       setExceptionDate('');
       setExceptionReason('');
@@ -746,11 +757,12 @@ export default function MonthlyRecapPage() {
 
   async function removeUserException(userId: string, date: string) {
     try {
-      await supabase
+      const { error } = await supabase
         .from('user_exception_dates')
         .delete()
         .eq('user_id', userId)
         .eq('date', date);
+      if (error) throw error;
       toast.success('Hari libur dihapus');
       setShowExceptionModal(false);
       refresh();
