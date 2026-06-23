@@ -15,8 +15,15 @@ const periods: { value: Period; label: string }[] = [
   { value: 'custom', label: 'Custom' },
 ];
 
-type SortKey = 'attendanceRate' | 'late' | 'present' | 'absent' | 'fullName' | 'lateRate';
+type SortKey = 'attendanceRate' | 'late' | 'present' | 'absent' | 'fullName' | 'lateRate' | 'totalWorkMinutes' | 'totalOvertimeMinutes';
 type SortDir = 'asc' | 'desc';
+
+function formatDuration(minutes: number | null): string {
+  if (minutes === null || minutes === undefined || minutes <= 0) return '—';
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return `${h}j ${m}m`;
+}
 
 export default function AttendanceRatePage() {
   const {
@@ -194,6 +201,12 @@ export default function AttendanceRatePage() {
                   <th className={thClass} onClick={() => handleSort('absent')}>
                     <div className="flex items-center gap-1">A {renderSortIcon('absent')}</div>
                   </th>
+                  <th className={thClass} onClick={() => handleSort('totalWorkMinutes')}>
+                    <div className="flex items-center gap-1">Jam Kerja {renderSortIcon('totalWorkMinutes')}</div>
+                  </th>
+                  <th className={thClass} onClick={() => handleSort('totalOvertimeMinutes')}>
+                    <div className="flex items-center gap-1">Lembur {renderSortIcon('totalOvertimeMinutes')}</div>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y">
@@ -222,6 +235,12 @@ export default function AttendanceRatePage() {
                       <td className={tdClass}>{emp.lateRate}%</td>
                       <td className={tdClass}>
                         <span className={emp.absent > 0 ? 'text-red-600 font-medium' : ''}>{emp.absent}</span>
+                      </td>
+                      <td className={tdClass}>{formatDuration(emp.totalWorkMinutes)}</td>
+                      <td className={tdClass}>
+                        <span className={emp.totalOvertimeMinutes > 0 ? 'text-orange-600 font-medium' : 'text-gray-400'}>
+                          {formatDuration(emp.totalOvertimeMinutes)}
+                        </span>
                       </td>
                     </tr>
                   );

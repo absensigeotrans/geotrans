@@ -17,6 +17,8 @@ export interface EmployeeStat {
   workingDays: number;
   attendanceRate: number;
   lateRate: number;
+  totalWorkMinutes: number;
+  totalOvertimeMinutes: number;
 }
 
 function countWorkingDays(start: Date, end: Date): number {
@@ -81,29 +83,32 @@ export function useAttendanceRate(): UseAttendanceRateReturn {
 
       const { data: attendance, error: attErr } = await supabase
         .from('attendance')
-        .select('user_id, status')
+        .select('user_id, status, work_duration_minutes, overtime_minutes')
         .gte('check_in_time', from)
         .lt('check_in_time', toISO);
 
       if (attErr) throw attErr;
       if (!mountedRef.current) return;
 
-      const records = (attendance || []) as Pick<Attendance, 'user_id' | 'status'>[];
+      const records = (attendance || []) as Pick<Attendance, 'user_id' | 'status' | 'work_duration_minutes' | 'overtime_minutes'>[];
 
       const workingDays = countWorkingDays(new Date(from), new Date(to));
 
-      const userAttendance: Record<string, { present: number; late: number; outside: number }> = {};
+      const userAttendance: Record<string, { present: number; late: number; outside: number; totalWorkMinutes: number; totalOvertimeMinutes: number }> = {};
       for (const rec of records) {
         if (!userAttendance[rec.user_id]) {
-          userAttendance[rec.user_id] = { present: 0, late: 0, outside: 0 };
+          userAttendance[rec.user_id] = { present: 0, late: 0, outside: 0, totalWorkMinutes: 0, totalOvertimeMinutes: 0 };
         }
         if (rec.status === 'present') userAttendance[rec.user_id].present++;
         else if (rec.status === 'late') userAttendance[rec.user_id].late++;
         else if (rec.status === 'outside_radius') userAttendance[rec.user_id].outside++;
+
+        userAttendance[rec.user_id].totalWorkMinutes += (rec.work_duration_minutes || 0);
+        userAttendance[rec.user_id].totalOvertimeMinutes += (rec.overtime_minutes || 0);
       }
 
       const computed: EmployeeStat[] = empList.map((emp) => {
-        const ua = userAttendance[emp.id] || { present: 0, late: 0, outside: 0 };
+        const ua = userAttendance[emp.id] || { present: 0, late: 0, outside: 0, totalWorkMinutes: 0, totalOvertimeMinutes: 0 };
         const daysPresent = ua.present + ua.late;
         const absent = Math.max(0, workingDays - daysPresent);
         const attendanceRate = workingDays > 0
@@ -122,6 +127,8 @@ export function useAttendanceRate(): UseAttendanceRateReturn {
           workingDays,
           attendanceRate,
           lateRate,
+          totalWorkMinutes: ua.totalWorkMinutes,
+          totalOvertimeMinutes: ua.totalOvertimeMinutes,
         };
       });
 
