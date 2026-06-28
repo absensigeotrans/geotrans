@@ -21,7 +21,7 @@ import {
   Plus,
 } from 'lucide-react';
 
-type CellStatus = 'present' | 'late' | 'outside_radius' | 'absent' | 'weekend' | 'future' | 'exception';
+type CellStatus = 'present' | 'late' | 'outside_radius' | 'absent' | 'weekend' | 'future' | 'exception' | 'leave';
 type EditChoice = 'present' | 'late' | 'absent';
 
 const CHOICES: EditChoice[] = ['present', 'late', 'absent'];
@@ -61,6 +61,10 @@ interface EmployeeRow {
   id: string;
   name: string;
   days: DayInfo[];
+  present: number;
+  late: number;
+  absent: number;
+  leave: number;
 }
 
 interface AttendanceRecord {
@@ -76,21 +80,27 @@ const STATUS_COLOR: Record<string, string> = {
   absent: 'bg-red-100 text-red-700 font-bold',
   weekend: 'bg-gray-50 text-gray-300',
   future: 'bg-gray-50 text-gray-200',
+  exception: 'bg-gray-100 text-gray-300 italic',
+  leave: 'bg-purple-100 text-purple-700 font-bold',
 };
 
-function getAbsent(emp: EmployeeRow): number {
+function getAbsent(emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>): number {
   return emp.days.filter((d) => d.status === 'absent').length;
 }
 
-function getPresent(emp: EmployeeRow): number {
+function getPresent(emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>): number {
   return emp.days.filter((d) => d.status === 'present' || d.status === 'outside_radius').length;
 }
 
-function getLate(emp: EmployeeRow): number {
+function getLate(emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>): number {
   return emp.days.filter((d) => d.status === 'late').length;
 }
 
-function getStatusAtDay(emp: EmployeeRow, day: number): CellStatus {
+function getLeave(emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>): number {
+  return emp.days.filter((d) => d.status === 'leave').length;
+}
+
+function getStatusAtDay(emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>, day: number): CellStatus {
   return emp.days.find((d) => d.day === day)?.status || 'absent';
 }
 
@@ -101,12 +111,13 @@ function getChoiceFromStatus(s: CellStatus): EditChoice {
 }
 
 function computeDynamicCounts(
-  emp: EmployeeRow,
+  emp: Omit<EmployeeRow, 'present' | 'late' | 'absent' | 'leave'>,
   pending: Record<number, EditChoice>,
 ) {
   let present = getPresent(emp);
   let late = getLate(emp);
   let absent = getAbsent(emp);
+  let leave = getLeave(emp);
 
   for (const [dayStr, choice] of Object.entries(pending)) {
     const day = Number(dayStr);
@@ -115,13 +126,14 @@ function computeDynamicCounts(
     if (original === 'present' || original === 'outside_radius') present--;
     else if (original === 'late') late--;
     else if (original === 'absent') absent--;
+    else if (original === 'leave') leave--;
 
     if (choice === 'present') present++;
     else if (choice === 'late') late++;
     else if (choice === 'absent') absent++;
   }
 
-  return { present, late, absent };
+  return { present, late, absent, leave };
 }
 
 export default function MonthlyRecapPage() {
@@ -194,16 +206,20 @@ export default function MonthlyRecapPage() {
             .lte('date', endDate),
           supabase
             .from('user_exception_dates')
-            .select('user_id, date')
+            .select('user_id, date, reason')
             .gte('date', startDate)
             .lte('date', endDate),
         ]);
 
         const globalSet = new Set((globalData || []).map((r) => r.date));
         const userMap: Record<string, Set<string>> = {};
+        const userReasonsMap: Record<string, Record<string, string>> = {};
         for (const r of userData || []) {
           if (!userMap[r.user_id]) userMap[r.user_id] = new Set();
           userMap[r.user_id].add(r.date);
+
+          if (!userReasonsMap[r.user_id]) userReasonsMap[r.user_id] = {};
+          userReasonsMap[r.user_id][r.date] = r.reason || '';
         }
 
         if (!cancelled) {
@@ -232,12 +248,18 @@ export default function MonthlyRecapPage() {
             const future = isFutureDate(year, month, d);
             const dateStr = formatDate(year, month, d);
             const isGlobalEx = globalSet.has(dateStr);
-            const isUserEx = userMap[p.id]?.has(dateStr);
+            const userReason = userReasonsMap[p.id]?.[dateStr];
+            const isUserEx = userReason !== undefined;
+            const isLeave = isUserEx && (
+              userReason.toLowerCase().startsWith('cuti') ||
+              userReason.toLowerCase().startsWith('sakit') ||
+              userReason.toLowerCase().startsWith('izin')
+            );
             const isException = isGlobalEx || isUserEx;
             const status = userDayStatus[p.id]?.[d];
 
             if (weekend || future || isException) {
-              const st = weekend ? 'weekend' : future ? 'future' : 'exception';
+              const st = weekend ? 'weekend' : future ? 'future' : isLeave ? 'leave' : 'exception';
               days.push({ day: d, status: st as CellStatus, isWeekend: weekend, isFuture: future });
             } else if (!status) {
               days.push({ day: d, status: 'absent', isWeekend: false, isFuture: false });
@@ -250,7 +272,18 @@ export default function MonthlyRecapPage() {
             }
           }
 
-          return { id: p.id, name: p.full_name, days };
+          const tempEmp = { id: p.id, name: p.full_name, days };
+          const counts = computeDynamicCounts(tempEmp, {});
+
+          return {
+            id: p.id,
+            name: p.full_name,
+            days,
+            present: counts.present,
+            late: counts.late,
+            absent: counts.absent,
+            leave: counts.leave,
+          };
         });
 
         if (!cancelled) setEmployees(rows);
@@ -291,6 +324,7 @@ export default function MonthlyRecapPage() {
 
   function cellClassWithPending(emp: EmployeeRow, day: DayInfo): string {
     if (day.status === 'exception') return 'bg-gray-100 text-gray-300 italic';
+    if (day.status === 'leave') return STATUS_COLOR.leave;
     const pending = getPendingForEmployee(emp.id);
     if (day.day in pending) {
       const c = pending[day.day];
@@ -309,18 +343,19 @@ export default function MonthlyRecapPage() {
       case 'present': case 'late': case 'outside_radius': return '●';
       case 'absent': return 'A';
       case 'exception': return '-';
+      case 'leave': return 'C';
       default: return '-';
     }
   }
 
   function cellTitle(emp: EmployeeRow, day: DayInfo): string {
     const pending = getPendingForEmployee(emp.id);
-    const label = day.day in pending ? CHOICE_LABEL[pending[day.day]] + ' (pending)' : day.status === 'absent' ? 'Absen' : day.status === 'present' ? 'Hadir' : day.status === 'late' ? 'Terlambat' : day.status === 'outside_radius' ? 'Luar Area' : day.status === 'weekend' ? 'Libur' : day.status === 'exception' ? 'Hari Libur' : '-';
+    const label = day.day in pending ? CHOICE_LABEL[pending[day.day]] + ' (pending)' : day.status === 'absent' ? 'Absen' : day.status === 'present' ? 'Hadir' : day.status === 'late' ? 'Terlambat' : day.status === 'outside_radius' ? 'Luar Area' : day.status === 'weekend' ? 'Libur' : day.status === 'exception' ? 'Hari Libur' : day.status === 'leave' ? 'Cuti' : '-';
     return `${emp.name} - ${day.day} ${monthLabel}: ${label}`;
   }
 
   function handleCellClick(emp: EmployeeRow, day: DayInfo) {
-    if (day.isWeekend || day.isFuture || day.status === 'exception') return;
+    if (day.isWeekend || day.isFuture || day.status === 'exception' || day.status === 'leave') return;
 
     const pending = getPendingForEmployee(emp.id);
     const current = day.day in pending
@@ -350,7 +385,7 @@ export default function MonthlyRecapPage() {
 
   function handleDayRightClick(e: React.MouseEvent, emp: EmployeeRow, day: DayInfo) {
     e.preventDefault();
-    if (day.isWeekend || day.isFuture || day.status === 'exception') return;
+    if (day.isWeekend || day.isFuture || day.status === 'exception' || day.status === 'leave') return;
 
     const pending = getPendingForEmployee(emp.id);
     const current = day.day in pending
@@ -464,7 +499,16 @@ export default function MonthlyRecapPage() {
             if (!choice) return d;
             return { ...d, status: choice as CellStatus };
           });
-          return { ...e, days: newDays };
+          const tempEmp = { id: e.id, name: e.name, days: newDays };
+          const counts = computeDynamicCounts(tempEmp, {});
+          return {
+            ...e,
+            days: newDays,
+            present: counts.present,
+            late: counts.late,
+            absent: counts.absent,
+            leave: counts.leave,
+          };
         }),
       );
 
@@ -478,7 +522,7 @@ export default function MonthlyRecapPage() {
   }
 
   const exportCSV = () => {
-    const headers = ['Nama', ...Array.from({ length: daysInMonth }, (_, i) => String(i + 1)), 'Hadir', 'Telat', 'Absen'];
+    const headers = ['Nama', ...Array.from({ length: daysInMonth }, (_, i) => String(i + 1)), 'Hadir', 'Telat', 'Absen', 'Cuti'];
     const rows = employeeDynamics.map((emp) => [
       emp.name,
       ...emp.days.map((d) => {
@@ -489,12 +533,14 @@ export default function MonthlyRecapPage() {
           case 'late': return 'T';
           case 'outside_radius': return 'L';
           case 'absent': return 'A';
+          case 'leave': return 'C';
           default: return '';
         }
       }),
       emp.present,
       emp.late,
       emp.absent,
+      emp.leave,
     ]);
     const csv = [headers, ...rows].map((r) => r.map((c) => `"${c}"`).join(',')).join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
@@ -520,10 +566,10 @@ export default function MonthlyRecapPage() {
       doc.text(title, 14, 16);
       doc.setFontSize(10);
       doc.text(`Generated: ${new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })}`, 14, 23);
-      doc.text(`Karyawan: ${employees.length} | Hadir: ${totalPresent} | Terlambat: ${totalLate} | Absen: ${totalAbsent} | Rata-rata: ${avgRate}%`, 14, 30);
+      doc.text(`Karyawan: ${employees.length} | Hadir: ${totalPresent} | Terlambat: ${totalLate} | Absen: ${totalAbsent} | Cuti: ${employeeDynamics.reduce((s, e) => s + e.leave, 0)} | Rata-rata: ${avgRate}%`, 14, 30);
 
       const dayHeaders = Array.from({ length: daysInMonth }, (_, i) => String(i + 1));
-      const headers = [['Nama', ...dayHeaders, 'Hadir', 'Telat', 'Absen']];
+      const headers = [['Nama', ...dayHeaders, 'Hadir', 'Telat', 'Absen', 'Cuti']];
       const rows = employeeDynamics.map((emp) => [
         emp.name,
         ...emp.days.map((d) => {
@@ -534,12 +580,14 @@ export default function MonthlyRecapPage() {
             case 'late': return '●';
             case 'outside_radius': return '●';
             case 'absent': return 'A';
+            case 'leave': return 'C';
             default: return '';
           }
         }),
         emp.present,
         emp.late,
         emp.absent,
+        emp.leave,
       ]);
 
       autoTable(doc, {
@@ -560,7 +608,7 @@ export default function MonthlyRecapPage() {
   };
 
   async function exportEmployeeXLSX(
-    emp: EmployeeRow & { present: number; late: number; absent: number },
+    emp: EmployeeRow,
   ) {
     const ExcelJS = (await import('exceljs')).default;
     const wb = new ExcelJS.Workbook();
@@ -576,6 +624,7 @@ export default function MonthlyRecapPage() {
       absent: 'Absen',
       weekend: 'Libur',
       future: '-',
+      leave: 'Cuti',
     };
 
     const statusIndicator: Record<string, string> = {
@@ -585,6 +634,7 @@ export default function MonthlyRecapPage() {
       absent: 'A',
       weekend: '-',
       future: '-',
+      leave: 'C',
     };
 
     const colorMap: Record<string, { bg: string; fg: string }> = {
@@ -594,6 +644,7 @@ export default function MonthlyRecapPage() {
       absent: { bg: 'FEE2E2', fg: '991B1B' },
       weekend: { bg: 'F9FAFB', fg: 'D1D5DB' },
       future: { bg: 'F9FAFB', fg: 'E5E7EB' },
+      leave: { bg: 'F3E8FF', fg: '6B21A8' },
     };
 
     const pending = pendingChanges[emp.id] || {};
@@ -687,6 +738,7 @@ export default function MonthlyRecapPage() {
     addSumRow('Jumlah Hadir', emp.present, '166534');
     addSumRow('Jumlah Terlambat', emp.late, '9A3412');
     addSumRow('Jumlah Absen', emp.absent, '991B1B');
+    addSumRow('Jumlah Cuti', emp.leave, '6B21A8');
 
     ws.addRow([]);
     const fr = ws.addRow([`Diexport: ${new Date().toLocaleString('id-ID')}`]);
@@ -852,6 +904,7 @@ export default function MonthlyRecapPage() {
           <span><span className="inline-block w-3 h-3 rounded-full bg-red-500 mr-1" /> Absen</span>
           <span><span className="inline-block border border-gray-300 align-middle mr-1" style={{ width: 12, height: 12 }} /> Libur/Masa Depan</span>
           <span><span className="inline-block w-3 h-3 bg-gray-100 border border-gray-200 align-middle mr-1" style={{ width: 12, height: 12 }} /> Hari Libur</span>
+          <span><span className="inline-block w-3 h-3 rounded-full bg-purple-500 mr-1" /> Cuti</span>
           <span><span className="inline-block w-3 h-3 rounded-full bg-yellow-300 mr-1 ring-2 ring-yellow-400" /> Belum disimpan</span>
         </div>
       </div>
@@ -887,6 +940,7 @@ export default function MonthlyRecapPage() {
                     <span className="text-green-600 font-medium">H {emp.present}</span>
                     <span className="text-orange-600 font-medium">T {emp.late}</span>
                     <span className="text-red-600 font-medium">A {emp.absent}</span>
+                    <span className="text-purple-600 font-medium">C {emp.leave}</span>
                   </div>
                   {pendingCount > 0 && (
                     <span className="bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-0.5 rounded-full">
@@ -915,6 +969,7 @@ export default function MonthlyRecapPage() {
                             <th className="px-2 py-1 text-center font-semibold text-green-700 bg-green-50 border min-w-[44px]">H</th>
                             <th className="px-2 py-1 text-center font-semibold text-orange-700 bg-orange-50 border min-w-[44px]">T</th>
                             <th className="px-2 py-1 text-center font-semibold text-red-700 bg-red-50 border min-w-[44px]">A</th>
+                            <th className="px-2 py-1 text-center font-semibold text-purple-700 bg-purple-50 border min-w-[44px]">C</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -925,7 +980,7 @@ export default function MonthlyRecapPage() {
                                 <td
                                   key={idx}
                                   className={`px-1.5 py-1.5 text-center border cursor-pointer select-none transition-all ${
-                                    d.isWeekend || d.isFuture || d.status === 'exception' ? 'cursor-default' : 'hover:brightness-90'
+                                    d.isWeekend || d.isFuture || d.status === 'exception' || d.status === 'leave' ? 'cursor-default' : 'hover:brightness-90'
                                   } ${cellClassWithPending(emp, d)}`}
                                   title={cellTitle(emp, d)}
                                   onClick={() => handleCellClick(emp, d)}
@@ -943,6 +998,9 @@ export default function MonthlyRecapPage() {
                             </td>
                             <td className="px-2 py-1.5 text-center font-semibold text-red-700 bg-red-50/50 border">
                               {emp.absent}
+                            </td>
+                            <td className="px-2 py-1.5 text-center font-semibold text-purple-700 bg-purple-50/50 border">
+                              {emp.leave}
                             </td>
                           </tr>
                         </tbody>
@@ -1134,7 +1192,7 @@ export default function MonthlyRecapPage() {
 
       <p className="text-xs text-gray-400 text-center">
         ● Hijau = Hadir &nbsp;|&nbsp; ● Oranye = Terlambat &nbsp;|&nbsp; ● Biru = Luar Area &nbsp;|&nbsp; A Merah = Absen &nbsp;|&nbsp;
-        - Abu-abu = Libur, Hari Libur khusus, atau masa depan &nbsp;|&nbsp; Klik cell untuk edit
+        C Ungu = Cuti &nbsp;|&nbsp; - Abu-abu = Libur, Hari Libur khusus, atau masa depan &nbsp;|&nbsp; Klik cell untuk edit
       </p>
     </div>
   );
