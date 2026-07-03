@@ -136,6 +136,12 @@ export default function EmployeesPage() {
   const handleSaveEdit = async () => {
     if (!editEmployee) return;
 
+    // Determine today_shift_type based on the new shift_type
+    const newTodayShiftType =
+      (editShift === 'morning' || editShift === 'afternoon' || editShift === 'full_time')
+        ? editShift
+        : null;
+
     // Optimistic update - langsung update UI tanpa loading
     const previousEmployees = [...employees];
     const updatedEmployee = {
@@ -143,6 +149,7 @@ export default function EmployeesPage() {
       full_name: editFullName,
       role: editRole,
       shift_type: editShift || null,
+      today_shift_type: newTodayShiftType,
       registered_password: editPassword || editEmployee.registered_password,
     };
 
@@ -162,6 +169,7 @@ export default function EmployeesPage() {
 
     if (result.success) {
       toast.success('Employee updated');
+      load(search, page);
     } else {
       // Revert on failure
       setEmployees(previousEmployees);

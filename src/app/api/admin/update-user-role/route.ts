@@ -64,6 +64,36 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // 3.5. Update user_shift_schedules for today to match the new shift type
+    if (shift_type !== undefined) {
+      const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Jakarta' });
+      if (shift_type === 'non_shifting' || shift_type === null || shift_type === '') {
+        // Delete today's schedule if shifting is disabled
+        const { error: deleteShiftError } = await supabaseAdmin
+          .from('user_shift_schedules')
+          .delete()
+          .eq('user_id', user_id)
+          .eq('schedule_date', today);
+
+        if (deleteShiftError) {
+          console.error('Failed to delete today schedule:', deleteShiftError);
+        }
+      } else if (shift_type === 'morning' || shift_type === 'afternoon' || shift_type === 'full_time') {
+        // Upsert today's schedule with the new shift type
+        const { error: upsertShiftError } = await supabaseAdmin
+          .from('user_shift_schedules')
+          .upsert({
+            user_id: user_id,
+            schedule_date: today,
+            shift_type: shift_type,
+          }, { onConflict: 'user_id,schedule_date' });
+
+        if (upsertShiftError) {
+          console.error('Failed to upsert today schedule:', upsertShiftError);
+        }
+      }
+    }
+
     // 4. Update auth.users if role or password changed
     const authUpdates: any = {};
     const userMetadata: any = {};
