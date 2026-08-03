@@ -6,7 +6,7 @@ export interface LeaveRequest {
   user_id: string;
   user_name: string;
   user_email: string;
-  type: 'annual' | 'sick' | 'emergency' | 'unpaid';
+  type: 'cuti_tahunan' | 'cuti_sakit' | 'cuti_darurat' | 'izin_tidak_hadir';
   start_date: string;
   end_date: string;
   reason: string;
@@ -24,10 +24,10 @@ interface LeaveInsert {
 }
 
 const leaveTypeLabels: Record<LeaveRequest['type'], string> = {
-  annual: 'Cuti Tahunan',
-  sick: 'Sakit',
-  emergency: 'Darurat',
-  unpaid: 'Izin Tidak Dibayar',
+  cuti_tahunan: 'Cuti Tahunan',
+  cuti_sakit: 'Cuti Sakit',
+  cuti_darurat: 'Cuti Darurat',
+  izin_tidak_hadir: 'Izin Tidak Hadir',
 };
 
 export { leaveTypeLabels };
@@ -51,7 +51,7 @@ export function useLeaveRequests() {
         user_id: r.user_id,
         user_name: r.profiles?.full_name || 'Unknown',
         user_email: r.profiles?.email || '',
-        type: r.type,
+        type: r.leave_type as LeaveRequest['type'],
         start_date: r.start_date,
         end_date: r.end_date,
         reason: r.reason || '',
@@ -78,6 +78,7 @@ export function useLeaveRequests() {
           status: 'approved',
           approved_by: user.user?.id,
           approved_at: new Date().toISOString(),
+          responded_at: new Date().toISOString(),
         })
         .eq('id', id);
 
@@ -104,6 +105,7 @@ export function useLeaveRequests() {
           status: 'rejected',
           approved_by: user.user?.id,
           approved_at: new Date().toISOString(),
+          responded_at: new Date().toISOString(),
         })
         .eq('id', id);
 
@@ -129,7 +131,7 @@ export function useLeaveRequests() {
 
       const { error } = await supabase.from('leave_requests').insert({
         user_id: userId,
-        type: data.type,
+        leave_type: data.type,
         start_date: data.start_date,
         end_date: data.end_date,
         reason: data.reason,

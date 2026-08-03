@@ -25,7 +25,7 @@ export default function LeaveRequestsPage() {
 
   // Form state for create
   const [formData, setFormData] = useState({
-    type: 'annual' as LeaveRequest['type'],
+    type: 'cuti_tahunan' as LeaveRequest['type'],
     start_date: '',
     end_date: '',
     reason: '',
@@ -88,7 +88,7 @@ export default function LeaveRequestsPage() {
     if (result.success) {
       toast.success('Permohonan cuti berhasil diajukan');
       setShowCreate(false);
-      setFormData({ type: 'annual', start_date: '', end_date: '', reason: '' });
+      setFormData({ type: 'cuti_tahunan', start_date: '', end_date: '', reason: '' });
     } else {
       toast.error(result.error || 'Gagal mengajukan permohonan');
     }
