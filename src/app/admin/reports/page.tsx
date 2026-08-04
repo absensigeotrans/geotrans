@@ -44,10 +44,26 @@ export default function ReportsPage() {
   // Sorting state
   const [sortKey, setSortKey] = useState<string>('date');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
-  // Delete modal state (bulk by date)
+  // Delete modal state (bulk by date or per user)
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteDate, setDeleteDate] = useState('');
+  const [deleteUserId, setDeleteUserId] = useState('');
   const [deleting, setDeleting] = useState(false);
+
+  // Extract list of unique employees from loaded records for the delete dropdown
+  const uniqueUsers = useMemo(() => {
+    const map = new Map<string, { id: string; name: string; employee_id?: string }>();
+    records.forEach((r: any) => {
+      if (r.user_id && r.profiles?.full_name) {
+        map.set(r.user_id, {
+          id: r.user_id,
+          name: r.profiles.full_name,
+          employee_id: r.profiles.employee_id,
+        });
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [records]);
 
   // Single record delete modal state
   const [showSingleDeleteModal, setShowSingleDeleteModal] = useState(false);
@@ -439,26 +455,28 @@ export default function ReportsPage() {
   // Open delete modal
   const openDeleteModal = () => {
     setDeleteDate(getWIBDate());
+    setDeleteUserId('');
     setShowDeleteModal(true);
   };
 
-  // Handle delete by date
+  // Handle delete by date (with optional user selection)
   const handleDeleteByDate = async () => {
     if (!deleteDate) {
       toast.error('Pilih tanggal terlebih dahulu');
       return;
     }
     setDeleting(true);
-    const result = await deleteByDate(deleteDate);
+    const result = await deleteByDate(deleteDate, deleteUserId || undefined);
     setDeleting(false);
 
     if (result.success) {
       setShowDeleteModal(false);
+      setDeleteUserId('');
       // Refresh data
       load(from, to, status, 1, search);
       // Show success with count
       if (result.count === 0) {
-        toast.info('Tidak ada data kehadiran untuk tanggal tersebut');
+        toast.info('Tidak ada data kehadiran untuk kriteria tersebut');
       } else {
         toast.success(result.message || `Berhasil menghapus ${result.count} data`);
       }
@@ -903,7 +921,7 @@ export default function ReportsPage() {
                 </div>
               </div>
 
-              <div className="mb-6">
+              <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   <Calendar className="w-4 h-4 inline mr-1" />
                   Pilih Tanggal
@@ -912,15 +930,40 @@ export default function ReportsPage() {
                   type="date"
                   value={deleteDate}
                   onChange={(e) => setDeleteDate(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm text-gray-900 bg-white"
                   max={getWIBDate()}
                 />
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Pilih Pegawai (Opsional)
+                </label>
+                <select
+                  value={deleteUserId}
+                  onChange={(e) => setDeleteUserId(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm text-gray-900 bg-white"
+                >
+                  <option value="" className="text-gray-900 bg-white">Semua Pegawai (Hapus Massal Hari Itu)</option>
+                  {uniqueUsers.map((u) => (
+                    <option key={u.id} value={u.id} className="text-gray-900 bg-white">
+                      {u.name} {u.employee_id ? `(${u.employee_id})` : ''}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {deleteDate && (
                 <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
                   <p className="text-sm text-yellow-800">
-                    <strong>Catatan:</strong> Data kehadiran untuk tanggal{' '}
+                    <strong>Catatan:</strong> Data kehadiran{' '}
+                    {deleteUserId ? (
+                      <>
+                        pegawai <strong>{uniqueUsers.find(u => u.id === deleteUserId)?.name}</strong> pada tanggal{' '}
+                      </>
+                    ) : (
+                      <>seluruh pegawai untuk tanggal </>
+                    )}
                     <strong>{formatWIBDateDisplay(deleteDate + 'T00:00:00')}</strong>{' '}
                     akan dihapus secara permanen.
                   </p>

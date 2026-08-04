@@ -363,19 +363,24 @@ export function useReports() {
     return shiftType && map[shiftType] ? map[shiftType] : '—';
   };
 
-  // Delete all attendance records for a specific date
-  const deleteByDate = useCallback(async (date: string) => {
+  // Delete attendance records for a specific date (and optional specific user)
+  const deleteByDate = useCallback(async (date: string, userId?: string) => {
     setLoading(true);
     setError(null);
     try {
       const { start, end } = getWIBDateRange(date);
 
-      const { error: deleteError, data: deletedData } = await supabase
+      let query = supabase
         .from('attendance')
         .delete()
         .gte('check_in_time', start)
-        .lte('check_in_time', end)
-        .select('id');
+        .lte('check_in_time', end);
+
+      if (userId) {
+        query = query.eq('user_id', userId);
+      }
+
+      const { error: deleteError, data: deletedData } = await query.select('id');
 
       if (deleteError) {
         throw deleteError;
@@ -383,7 +388,13 @@ export function useReports() {
 
       // Clear local records since data changed
       setRecords([]);
-      return { success: true, message: `Berhasil menghapus ${deletedData?.length || 0} data untuk ${date}`, count: deletedData?.length || 0 };
+      return {
+        success: true,
+        message: userId
+          ? `Berhasil menghapus data absensi pegawai untuk tanggal ${date}`
+          : `Berhasil menghapus ${deletedData?.length || 0} data untuk ${date}`,
+        count: deletedData?.length || 0
+      };
     } catch (err: any) {
       const msg = err?.message || err?.details || 'Failed to delete records';
       console.error('deleteByDate catch error:', msg);
