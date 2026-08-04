@@ -29,7 +29,7 @@ function formatDuration(minutes: number | null): string {
 
 export default function ReportsPage() {
   const { profile } = useAuth();
-  const { records, loading, fetchReportWithUsers, getStats, error, getShiftLabel, deleteByDate, saveManualAttendance } = useReports();
+  const { records, loading, fetchReportWithUsers, getStats, error, getShiftLabel, deleteByDate, deleteRecord, saveManualAttendance } = useReports();
 
   const [from, setFrom] = useState(() => getWIBDaysAgo(30));
   const [to, setTo] = useState(() => getWIBDate());
@@ -44,10 +44,15 @@ export default function ReportsPage() {
   // Sorting state
   const [sortKey, setSortKey] = useState<string>('date');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
-  // Delete modal state
+  // Delete modal state (bulk by date)
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteDate, setDeleteDate] = useState('');
   const [deleting, setDeleting] = useState(false);
+
+  // Single record delete modal state
+  const [showSingleDeleteModal, setShowSingleDeleteModal] = useState(false);
+  const [singleDeleteRecord, setSingleDeleteRecord] = useState<any>(null);
+  const [deletingSingle, setDeletingSingle] = useState(false);
 
   // Manual attendance modal state
   const [isManualModalOpen, setIsManualModalOpen] = useState(false);
@@ -462,6 +467,23 @@ export default function ReportsPage() {
     }
   };
 
+  // Handle delete single attendance record
+  const handleDeleteSingleRecord = async () => {
+    if (!singleDeleteRecord?.id) return;
+    setDeletingSingle(true);
+    const result = await deleteRecord(singleDeleteRecord.id);
+    setDeletingSingle(false);
+
+    if (result.success) {
+      setShowSingleDeleteModal(false);
+      setSingleDeleteRecord(null);
+      load(from, to, status, page, search);
+      toast.success(result.message || 'Berhasil menghapus data absensi');
+    } else {
+      toast.error(result.error || 'Gagal menghapus data absensi');
+    }
+  };
+
   const columns = [
     {
       key: 'user',
@@ -595,18 +617,32 @@ export default function ReportsPage() {
       key: 'actions',
       header: 'Aksi',
       render: (row: any) => (
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => {
-            setManualModalData(row);
-            setIsManualModalOpen(true);
-          }}
-          className="!text-black hover:!text-gray-700 p-1 h-auto"
-          title="Edit Absensi"
-        >
-          <Edit2 className="w-4 h-4" />
-        </Button>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              setManualModalData(row);
+              setIsManualModalOpen(true);
+            }}
+            className="!text-black hover:!text-gray-700 p-1 h-auto"
+            title="Edit Absensi"
+          >
+            <Edit2 className="w-4 h-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              setSingleDeleteRecord(row);
+              setShowSingleDeleteModal(true);
+            }}
+            className="!text-red-600 hover:!text-red-800 p-1 h-auto"
+            title="Hapus Absensi Pegawai Ini"
+          >
+            <Trash2 className="w-4 h-4" />
+          </Button>
+        </div>
       ),
     },
   ];
@@ -907,6 +943,90 @@ export default function ReportsPage() {
                   disabled={!deleteDate || deleting}
                 >
                   {deleting ? (
+                    <span className="flex items-center gap-2">
+                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Menghapus...
+                    </span>
+                  ) : (
+                    <>
+                      <Trash2 className="w-4 h-4" />
+                      Hapus Permanen
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Single Record Delete Confirmation Modal */}
+      {showSingleDeleteModal && singleDeleteRecord && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+            <div className="bg-red-600 px-6 py-4 flex items-center gap-3">
+              <Trash2 className="w-5 h-5 text-white" />
+              <h3 className="text-lg font-semibold text-white">Hapus Absensi Pegawai</h3>
+            </div>
+            <div className="p-6">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-6 h-6 text-red-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Konfirmasi Penghapusan</h4>
+                  <p className="text-sm text-gray-600">
+                    Apakah Anda yakin ingin menghapus data absensi pegawai ini? Aksi ini tidak dapat dibatalkan.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6 space-y-2 text-sm">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-gray-500">Pegawai:</span>
+                  <span className="font-semibold text-gray-900">{singleDeleteRecord.profiles?.full_name || '—'}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-gray-500">Tanggal:</span>
+                  <span className="text-gray-800">{formatWIBDateDisplay(singleDeleteRecord.check_in_time)}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-gray-500">Check-in:</span>
+                  <span className="text-gray-800">{formatWIBTime(singleDeleteRecord.check_in_time)}</span>
+                </div>
+                {singleDeleteRecord.check_out_time && (
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium text-gray-500">Check-out:</span>
+                    <span className="text-gray-800">{formatWIBTime(singleDeleteRecord.check_out_time)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-gray-500">Status:</span>
+                  <Badge variant={singleDeleteRecord.status === 'present' ? 'success' : singleDeleteRecord.status === 'late' ? 'warning' : 'danger'}>
+                    {singleDeleteRecord.status.replace('_', ' ')}
+                  </Badge>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setShowSingleDeleteModal(false);
+                    setSingleDeleteRecord(null);
+                  }}
+                  className="flex-1"
+                  disabled={deletingSingle}
+                >
+                  Batal
+                </Button>
+                <Button
+                  variant="danger"
+                  onClick={handleDeleteSingleRecord}
+                  className="flex-1"
+                  disabled={deletingSingle}
+                >
+                  {deletingSingle ? (
                     <span className="flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       Menghapus...

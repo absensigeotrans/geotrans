@@ -440,6 +440,31 @@ export function useReports() {
     }
   }, []);
 
+  // Delete single attendance record by ID
+  const deleteRecord = useCallback(async (id: string) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const { error: deleteError } = await supabase
+        .from('attendance')
+        .delete()
+        .eq('id', id);
+
+      if (deleteError) {
+        throw deleteError;
+      }
+
+      return { success: true, message: 'Berhasil menghapus data absensi' };
+    } catch (err: any) {
+      const msg = err?.message || err?.details || 'Failed to delete record';
+      console.error('deleteRecord catch error:', msg);
+      setError(msg);
+      return { success: false, error: msg };
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   return {
     records,
     loading,
@@ -452,6 +477,7 @@ export function useReports() {
     getEmployeeSummary,
     getShiftLabel,
     deleteByDate,
+    deleteRecord,
     saveManualAttendance,
   };
 }
