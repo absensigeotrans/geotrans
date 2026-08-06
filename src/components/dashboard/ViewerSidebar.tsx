@@ -18,6 +18,7 @@ import {
   LogOut,
   Menu,
   ChevronLeft,
+  Megaphone,
 } from 'lucide-react';
 
 const navItems = [
@@ -137,7 +138,10 @@ export function ViewerSidebar({ open, onClose }: SidebarProps) {
         </div>
 
         <nav className="p-3 space-y-1 flex-1 overflow-y-auto">
-          {navItems.map((item) => {
+          {[
+            ...navItems,
+            ...(profile?.role === 'admin' ? [{ href: '/admin/announcements', icon: Megaphone, label: 'Pengumuman' }] : []),
+          ].map((item) => {
             const Icon = item.icon;
             const active = isActive(item);
 
