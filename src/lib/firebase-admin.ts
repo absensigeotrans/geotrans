@@ -31,7 +31,22 @@ export function getFirebaseAdminApp(): App | null {
       }
     }
 
-    // Fallback to environment variables if JSON file is missing
+    // Support loading from a single environment variable containing the service account JSON
+    if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+      try {
+        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+        if (typeof serviceAccount.private_key === 'string') {
+          serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
+        }
+        return initializeApp({
+          credential: cert(serviceAccount),
+        });
+      } catch (e: any) {
+        console.error('[FirebaseAdmin] Error parsing FIREBASE_SERVICE_ACCOUNT env var:', e?.message || e);
+      }
+    }
+
+    // Fallback to separate environment variables if JSON file is missing
     if (process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_CLIENT_EMAIL && process.env.FIREBASE_PRIVATE_KEY) {
       return initializeApp({
         credential: cert({
