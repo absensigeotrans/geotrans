@@ -2,7 +2,9 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
+import { safeFetchJson } from '@/lib/safe-fetch';
 import { useAuth } from '@/context/AuthContext';
+
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Modal } from '@/components/ui/Modal';
@@ -117,7 +119,7 @@ export default function AdminPasswordRequestsPage() {
     const newStatus = responseAction === 'approve' ? 'approved' : 'rejected';
 
     try {
-      const res = await fetch('/api/admin/approve-password-request', {
+      const { ok, data: result, error: fetchErr } = await safeFetchJson('/api/admin/approve-password-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -127,10 +129,8 @@ export default function AdminPasswordRequestsPage() {
         }),
       });
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result.error || 'Gagal memproses keputusan');
+      if (!ok) {
+        throw new Error(fetchErr || 'Gagal memproses keputusan');
       }
 
       toast.success(
@@ -138,6 +138,7 @@ export default function AdminPasswordRequestsPage() {
           ? 'Pengajuan ganti password berhasil disetujui, password terupdate'
           : 'Pengajuan ganti password ditolak'
       );
+
       
       setSelectedRequest(null);
       setResponseAction(null);

@@ -29,10 +29,12 @@ import {
   UserCog,
   Lock,
   Award,
+  Megaphone,
 } from 'lucide-react';
 
 const navItems = [
   { href: '/admin', icon: LayoutDashboard, label: 'Dashboard', exact: true },
+  { href: '/admin/announcements', icon: Megaphone, label: 'Pengumuman' },
   { href: '/admin/employees', icon: Users, label: 'Kelola Karyawan' },
   { href: '/admin/admins', icon: UserCog, label: 'Kelola Admin' },
   { href: '/admin/offices', icon: Building2, label: 'Kelola Kantor' },

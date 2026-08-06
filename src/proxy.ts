@@ -19,13 +19,14 @@ export async function proxy(request: NextRequest) {
   const role = user.user_metadata?.role;
 
   if (path === '/login' || path === '/') {
-    const destination = role === 'admin' ? '/admin' : '/dashboard';
+    const destination = role === 'admin' ? '/admin' : role === 'viewer' ? '/dashboard' : '/employee';
     return NextResponse.redirect(new URL(destination, request.url));
   }
 
   // 3. Role-based routing protection
-  if (path.startsWith('/admin') && role !== 'admin') {
-    return NextResponse.redirect(new URL('/dashboard', request.url));
+  if (path.startsWith('/admin') && role && role !== 'admin') {
+    const destination = role === 'viewer' ? '/dashboard' : '/employee';
+    return NextResponse.redirect(new URL(destination, request.url));
   }
 
   return supabaseResponse;

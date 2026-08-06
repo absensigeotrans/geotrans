@@ -78,3 +78,30 @@ export interface Location {
   longitude: number;
   accuracy?: number;
 }
+
+export type AnnouncementPriority = 'normal' | 'important' | 'urgent';
+export type AnnouncementTargetType = 'ALL' | 'DEPARTMENT' | 'USERS';
+
+export interface Announcement {
+  id: string;
+  title: string;
+  body: string;
+  priority: AnnouncementPriority;
+  target_type: AnnouncementTargetType;
+  target_values: string[];
+  author_id?: string | null;
+  expires_at?: string | null;
+  created_at: string;
+  author_name?: string;
+  total_targets?: number;
+  read_count?: number;
+}
+
+export interface AnnouncementRead {
+  id: string;
+  announcement_id: string;
+  user_id: string;
+  read_at: string;
+  profiles?: Profile;
+}
+

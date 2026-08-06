@@ -4,6 +4,8 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Circle, useMapEvents, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { safeFetchJson } from '@/lib/safe-fetch';
+
 
 // Fix default marker icon path issue in bundlers
 const iconDefault = L.icon({
@@ -91,18 +93,22 @@ export default function MapPicker({ latitude, longitude, radius, onPositionChang
     debounceRef.current = setTimeout(async () => {
       setSearching(true);
       try {
-        const res = await fetch(
+        const { ok, data } = await safeFetchJson<NominatimResult[]>(
           `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(value)}&limit=5&countrycodes=id`
         );
-        const data: NominatimResult[] = await res.json();
-        setResults(data);
-        setShowResults(data.length > 0);
+        if (ok && Array.isArray(data)) {
+          setResults(data);
+          setShowResults(data.length > 0);
+        } else {
+          setResults([]);
+        }
       } catch {
         setResults([]);
       } finally {
         setSearching(false);
       }
     }, 500);
+
   }, []);
 
   const selectResult = useCallback((r: NominatimResult) => {

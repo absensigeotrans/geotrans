@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase-admin';
 import { createClient } from '@/utils/supabase/server';
+import { sendFcmPushNotification } from '@/lib/firebase-admin';
 
-export const runtime = 'edge';
 
 export async function POST(req: NextRequest) {
   try {
@@ -110,6 +110,14 @@ export async function POST(req: NextRequest) {
           { status: 500 }
         );
       }
+
+      // Send FCM Push Notification to employee
+      await sendFcmPushNotification({
+        userIds: [user_id],
+        title: '✅ Password Berhasil Diperbarui',
+        body: 'Pengajuan ubah password Anda telah disetujui oleh Admin. Silakan login dengan password baru Anda.',
+        data: { type: 'password_change', status: 'approved' },
+      });
     } else {
       // 7. Update request status to rejected
       const { error: updateReqError } = await supabaseAdmin
@@ -129,7 +137,16 @@ export async function POST(req: NextRequest) {
           { status: 500 }
         );
       }
+
+      // Send FCM Push Notification to employee
+      await sendFcmPushNotification({
+        userIds: [user_id],
+        title: '❌ Pengajuan Password Ditolak',
+        body: admin_notes ? `Catatan Admin: ${admin_notes}` : 'Pengajuan ubah password Anda telah ditolak oleh Admin.',
+        data: { type: 'password_change', status: 'rejected' },
+      });
     }
+
 
     return NextResponse.json({ success: true });
   } catch (err: any) {

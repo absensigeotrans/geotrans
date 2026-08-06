@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
+import { safeFetchJson } from '@/lib/safe-fetch';
 import { Profile, UserRole, ShiftType } from '@/types';
 
 interface EmployeeUpdate {
@@ -96,8 +97,7 @@ export function useEmployees() {
 
   const updateEmployee = useCallback(async (id: string, updates: EmployeeUpdate) => {
     try {
-      // Use API route with service_role to update both profiles and auth metadata
-      const res = await fetch('/api/admin/update-user-role', {
+      const { ok, data: result, error: fetchErr } = await safeFetchJson('/api/admin/update-user-role', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -106,10 +106,8 @@ export function useEmployees() {
         }),
       });
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        throw new Error(result.error || 'Gagal update karyawan');
+      if (!ok) {
+        throw new Error(fetchErr || 'Gagal update karyawan');
       }
 
       return { success: true, data: updates as Profile };
@@ -137,22 +135,20 @@ export function useEmployees() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/admin/create-user', {
+      const { ok, data: result, error: fetchErr } = await safeFetchJson('/api/admin/create-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        return { success: false, error: result.error || 'Gagal membuat karyawan' };
+      if (!ok) {
+        return { success: false, error: fetchErr || 'Gagal membuat karyawan' };
       }
 
       // Refresh employee list
       await fetchEmployees();
 
-      return { success: true, message: result.message || `Karyawan ${data.full_name} berhasil dibuat` };
+      return { success: true, message: result?.message || `Karyawan ${data.full_name} berhasil dibuat` };
     } catch (err: any) {
       const msg = err?.message || 'Failed to create employee';
       setError(msg);
@@ -167,22 +163,20 @@ export function useEmployees() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/admin/delete-user', {
+      const { ok, data: result, error: fetchErr } = await safeFetchJson('/api/admin/delete-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId }),
       });
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        return { success: false, error: result.error || 'Gagal menghapus karyawan' };
+      if (!ok) {
+        return { success: false, error: fetchErr || 'Gagal menghapus karyawan' };
       }
 
       // Refresh list
       await fetchEmployees();
 
-      return { success: true, message: result.message || 'Karyawan berhasil dihapus' };
+      return { success: true, message: result?.message || 'Karyawan berhasil dihapus' };
     } catch (err: any) {
       const msg = err?.message || 'Failed to delete employee';
       setError(msg);
@@ -191,6 +185,7 @@ export function useEmployees() {
       setLoading(false);
     }
   }, [fetchEmployees]);
+
 
   const fetchAllEmployees = useCallback(async (search = '', includeAdmins = false) => {
     try {

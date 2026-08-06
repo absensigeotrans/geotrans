@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase-admin';
 import { createClient } from '@/utils/supabase/server';
-
-export const runtime = 'edge';
+import { sendFcmPushNotification } from '@/lib/firebase-admin';
 
 export async function POST(req: NextRequest) {
   try {
@@ -120,6 +119,17 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Send Push Notification if role was updated
+    if (role) {
+      const roleLabel = role === 'driver_bebas' ? 'Driver Bebas' : role === 'juru_parkir' ? 'Juru Parkir' : 'Karyawan';
+      await sendFcmPushNotification({
+        userIds: [user_id],
+        title: 'ℹ️ Perubahan Peran/Role Akun',
+        body: `Peran akun Anda telah diperbarui menjadi ${roleLabel} oleh Admin.`,
+        data: { type: 'role_update', role },
+      });
+    }
+
     return NextResponse.json({ success: true });
   } catch (err: any) {
     return NextResponse.json(
@@ -128,4 +138,5 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
 

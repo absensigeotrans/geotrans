@@ -30,11 +30,14 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (authLoading) return;
-    if (user && profile && typeof window !== 'undefined') {
-      if (profile.role === 'admin') {
+    if (user && typeof window !== 'undefined') {
+      const userRole = profile?.role || user.user_metadata?.role;
+      if (userRole === 'admin') {
         router.push('/admin');
-      } else {
+      } else if (userRole === 'viewer') {
         router.push('/dashboard');
+      } else {
+        router.push('/employee');
       }
     }
   }, [user, profile, authLoading, router]);
@@ -51,6 +54,7 @@ export default function LoginPage() {
       setToast({ message: result.error.message, type: 'error' });
     } else {
       setToast({ message: 'Berhasil masuk!', type: 'success' });
+      router.refresh();
     }
   };
 
