@@ -139,11 +139,8 @@ export default function AdminAnnouncementsPage() {
       let formattedExpiresAt: string | null = null;
       if (expiresAt) {
         const expDate = new Date(expiresAt);
-        // If user picked current minute, add 59 seconds to prevent instant expiration
-        if (expDate.getTime() <= Date.now()) {
-          expDate.setSeconds(59);
-        }
-        if (expDate.getTime() > Date.now()) {
+        // Only set expires_at if it is at least 5 minutes in the future
+        if (expDate.getTime() > Date.now() + 5 * 60 * 1000) {
           formattedExpiresAt = expDate.toISOString();
         }
       }
@@ -491,6 +488,7 @@ export default function AdminAnnouncementsPage() {
                 onChange={(e) => setExpiresAt(e.target.value)}
                 className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 bg-white font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+              <p className="text-[11px] text-gray-400 mt-1">Kosongkan jika pengumuman berlaku selamanya.</p>
             </div>
           </div>
 
