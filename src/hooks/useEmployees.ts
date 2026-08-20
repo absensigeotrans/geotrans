@@ -61,39 +61,50 @@ export function useEmployees() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchEmployees = useCallback(async (page = 1, limit = 50, search = '', includeAdmins = false) => {
-    setLoading(true);
-    setError(null);
-    try {
-      let query = supabase
-        .from('profiles')
-        .select('*', { count: 'exact' });
+  const fetchEmployees = useCallback(
+    async (
+      page = 1,
+      limit = 50,
+      search = '',
+      roleFilter: UserRole | 'all' | 'non-admin' | boolean = false
+    ) => {
+      setLoading(true);
+      setError(null);
+      try {
+        let query = supabase
+          .from('profiles')
+          .select('*', { count: 'exact' });
 
-      if (!includeAdmins) {
-        query = query.not('role', 'eq', 'admin');
+        if (roleFilter === false || roleFilter === 'non-admin') {
+          query = query.not('role', 'eq', 'admin');
+        } else if (typeof roleFilter === 'string' && roleFilter !== 'all') {
+          query = query.eq('role', roleFilter);
+        }
+
+        query = query
+          .order('created_at', { ascending: false })
+          .range((page - 1) * limit, page * limit - 1);
+
+        if (search) {
+          query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
+        }
+
+        const { data, error: fetchError, count } = await query;
+        if (fetchError) throw fetchError;
+
+        const enriched = await enrichEmployeesWithTodayShift((data as Profile[]) || []);
+        setEmployees(enriched);
+        return { data: enriched, count: count || 0 };
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Failed to fetch employees';
+        setError(msg);
+        return { data: [], count: 0 };
+      } finally {
+        setLoading(false);
       }
-
-      query = query.order('created_at', { ascending: false })
-        .range((page - 1) * limit, page * limit - 1);
-
-      if (search) {
-        query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
-      }
-
-      const { data, error: fetchError, count } = await query;
-      if (fetchError) throw fetchError;
-
-      const enriched = await enrichEmployeesWithTodayShift((data as Profile[]) || []);
-      setEmployees(enriched);
-      return { data: enriched, count: count || 0 };
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Failed to fetch employees';
-      setError(msg);
-      return { data: [], count: 0 };
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+    },
+    []
+  );
 
   const updateEmployee = useCallback(async (id: string, updates: EmployeeUpdate) => {
     try {
@@ -187,32 +198,40 @@ export function useEmployees() {
   }, [fetchEmployees]);
 
 
-  const fetchAllEmployees = useCallback(async (search = '', includeAdmins = false) => {
-    try {
-      let query = supabase
-        .from('profiles')
-        .select('*');
+  const fetchAllEmployees = useCallback(
+    async (
+      search = '',
+      roleFilter: UserRole | 'all' | 'non-admin' | boolean = false
+    ) => {
+      try {
+        let query = supabase
+          .from('profiles')
+          .select('*');
 
-      if (!includeAdmins) {
-        query = query.not('role', 'eq', 'admin');
+        if (roleFilter === false || roleFilter === 'non-admin') {
+          query = query.not('role', 'eq', 'admin');
+        } else if (typeof roleFilter === 'string' && roleFilter !== 'all') {
+          query = query.eq('role', roleFilter);
+        }
+
+        query = query.order('created_at', { ascending: false });
+
+        if (search) {
+          query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
+        }
+
+        const { data, error: fetchError } = await query;
+        if (fetchError) throw fetchError;
+
+        const enriched = await enrichEmployeesWithTodayShift((data as Profile[]) || []);
+        return enriched;
+      } catch (err) {
+        console.error('Error fetching all employees:', err);
+        return [];
       }
-
-      query = query.order('created_at', { ascending: false });
-
-      if (search) {
-        query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
-      }
-
-      const { data, error: fetchError } = await query;
-      if (fetchError) throw fetchError;
-
-      const enriched = await enrichEmployeesWithTodayShift((data as Profile[]) || []);
-      return enriched;
-    } catch (err) {
-      console.error('Error fetching all employees:', err);
-      return [];
-    }
-  }, []);
+    },
+    []
+  );
 
   return {
     employees,

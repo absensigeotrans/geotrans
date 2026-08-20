@@ -50,11 +50,9 @@ export default function AdminsPage() {
 
   const load = useCallback(
     async (s = search, p = page) => {
-      // Fetch all, we will filter for admins
-      const result = await fetchEmployees(p, PAGE_SIZE, s, true);
-      // Let's filter admins to calculate total count
-      const allAdmins = (result.data || []).filter((e) => e.role === 'admin');
-      setTotal(allAdmins.length);
+      // Query admins directly from database for maximum speed and accurate count
+      const result = await fetchEmployees(p, PAGE_SIZE, s, 'admin');
+      setTotal(result.count || (result.data || []).length);
     },
     [fetchEmployees, search, page]
   );

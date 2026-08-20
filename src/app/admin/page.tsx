@@ -13,7 +13,7 @@ import { getWIBDate, getWIBDateObj, formatWIBDate, formatWIBTime, formatWIBDateH
 import {
   CheckCircle, Clock, XCircle, Users, Building2, MapPin,
   TrendingUp, Calendar, ArrowUpRight, AlertTriangle,
-  RefreshCw, TrendingDown, Award, AlertCircle, LogOut, Navigation,
+  Loader2, TrendingDown, Award, AlertCircle, LogOut, Navigation,
   UserCheck, UserX,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -279,10 +279,11 @@ export default function AdminDashboard() {
         <button
           onClick={loadData}
           disabled={refreshing}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-red-blue text-white rounded-lg hover:opacity-90 transition-all shadow-md disabled:opacity-50"
+          title="Muat Ulang Data"
+          aria-label="Muat Ulang Data"
+          className="p-2.5 rounded-xl bg-white border border-gray-200 text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 hover:border-blue-200 shadow-xs active:scale-95 transition-all duration-200 disabled:opacity-50 cursor-pointer"
         >
-          <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
-          Refresh
+          <Loader2 className={`w-4 h-4 transition-transform ${refreshing ? 'animate-spin text-blue-600' : ''}`} />
         </button>
       </div>
 

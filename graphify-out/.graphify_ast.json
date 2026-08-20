@@ -1,0 +1,4092 @@
+{
+  "nodes": [
+    {
+      "id": "src_app_admin_activity_logs_page_activitylogspage",
+      "label": "ActivityLogsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_admins_page_adminspage",
+      "label": "AdminsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_announcements_page_adminannouncementspage",
+      "label": "AdminAnnouncementsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_anomalies_page_anomaliespage",
+      "label": "AnomaliesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_attendance_rate_page_attendanceratepage",
+      "label": "AttendanceRatePage",
+      "file_type": "code",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_driver_requests_page_admindriverrequestspage",
+      "label": "AdminDriverRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_employees_page_employeespage",
+      "label": "EmployeesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_layout_adminlayout",
+      "label": "AdminLayout",
+      "file_type": "code",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_leave_requests_page_leaverequestspage",
+      "label": "LeaveRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_monitoring_page_monitoringpage",
+      "label": "MonitoringPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_monthly_recap_page_monthlyrecappage",
+      "label": "MonthlyRecapPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/monthly-recap/page.tsx",
+      "source_location": "L139",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_offices_page_officespage",
+      "label": "OfficesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_page_admindashboard",
+      "label": "AdminDashboard",
+      "file_type": "code",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_password_requests_page_adminpasswordrequestspage",
+      "label": "AdminPasswordRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_performance_page_performancepage",
+      "label": "PerformancePage",
+      "file_type": "code",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_photos_page_photospage",
+      "label": "PhotosPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_reports_page_reportspage",
+      "label": "ReportsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_admin_settings_page_settingspage",
+      "label": "SettingsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/settings/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_id_reads_route_get",
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/[id]/reads/route.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_id_resend_push_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/[id]/resend-push/route.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_reads_route_get",
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/reads/route.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_resend_push_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/resend-push/route.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_route_get",
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L80",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_announcements_route_delete",
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L169",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_approve_password_request_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/approve-password-request/route.ts",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_create_user_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/create-user/route.ts",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_delete_user_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/delete-user/route.ts",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_api_admin_update_user_role_route_post",
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/update-user-role/route.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_dashboard_attendance_rate_page_viewerattendanceratepage",
+      "label": "ViewerAttendanceRatePage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_dashboard_layout_dashboardlayout",
+      "label": "DashboardLayout",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_dashboard_monitoring_page_viewermonitoringpage",
+      "label": "ViewerMonitoringPage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_dashboard_page_viewerdashboard",
+      "label": "ViewerDashboard",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L60",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_dashboard_reports_page_viewerreportspage",
+      "label": "ViewerReportsPage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_history_page_employeehistorypage",
+      "label": "EmployeeHistoryPage",
+      "file_type": "code",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_layout_employeelayout",
+      "label": "EmployeeLayout",
+      "file_type": "code",
+      "source_file": "src/app/employee/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_leave_page_employeeleavepage",
+      "label": "EmployeeLeavePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/leave/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_page_employeeattendancepage",
+      "label": "EmployeeAttendancePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_profile_page_employeeprofilepage",
+      "label": "EmployeeProfilePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/profile/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_employee_role_request_page_employeerolerequestpage",
+      "label": "EmployeeRoleRequestPage",
+      "file_type": "code",
+      "source_file": "src/app/employee/role-request/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_history_page_historypage",
+      "label": "HistoryPage",
+      "file_type": "code",
+      "source_file": "src/app/history/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_layout_rootlayout",
+      "label": "RootLayout",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_login_page_loginpage",
+      "label": "LoginPage",
+      "file_type": "code",
+      "source_file": "src/app/login/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_offline_page_offlinepage",
+      "label": "OfflinePage",
+      "file_type": "code",
+      "source_file": "src/app/offline/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_page_home",
+      "label": "Home",
+      "file_type": "code",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_brandsplashscreen_brandsplashscreen",
+      "label": "BrandSplashScreen",
+      "file_type": "code",
+      "source_file": "src/components/BrandSplashScreen.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_toast_toast",
+      "label": "Toast",
+      "file_type": "code",
+      "source_file": "src/components/Toast.tsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_chartcard_chartcard",
+      "label": "ChartCard",
+      "file_type": "code",
+      "source_file": "src/components/admin/ChartCard.tsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_mappicker_mappicker",
+      "label": "MapPicker",
+      "file_type": "code",
+      "source_file": "src/components/admin/MapPicker.tsx",
+      "source_location": "L76",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_sidebar_sidebar",
+      "label": "Sidebar",
+      "file_type": "code",
+      "source_file": "src/components/admin/Sidebar.tsx",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_sidebar_mobilemenubutton",
+      "label": "MobileMenuButton",
+      "file_type": "code",
+      "source_file": "src/components/admin/Sidebar.tsx",
+      "source_location": "L320",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_charts_analyticscharts_statuspiechart",
+      "label": "StatusPieChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_charts_analyticscharts_dailyattendancechart",
+      "label": "DailyAttendanceChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_admin_charts_analyticscharts_latetrendchart",
+      "label": "LateTrendChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L75",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_dashboard_viewersidebar_viewersidebar",
+      "label": "ViewerSidebar",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ViewerSidebar.tsx",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_dashboard_viewersidebar_mobilemenubutton",
+      "label": "MobileMenuButton",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ViewerSidebar.tsx",
+      "source_location": "L223",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_employee_employeemap_employeemap",
+      "label": "EmployeeMap",
+      "file_type": "code",
+      "source_file": "src/components/employee/EmployeeMap.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_employee_selfiecapturemodal_selfiecapturemodal",
+      "label": "SelfieCaptureModal",
+      "file_type": "code",
+      "source_file": "src/components/employee/SelfieCaptureModal.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_badge_badge",
+      "label": "Badge",
+      "file_type": "code",
+      "source_file": "src/components/ui/Badge.tsx",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_daterangepicker_daterangepicker",
+      "label": "DateRangePicker",
+      "file_type": "code",
+      "source_file": "src/components/ui/DateRangePicker.tsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_forminput_forminput",
+      "label": "FormInput",
+      "file_type": "code",
+      "source_file": "src/components/ui/FormInput.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_forminput_formselect",
+      "label": "FormSelect",
+      "file_type": "code",
+      "source_file": "src/components/ui/FormInput.tsx",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_manualattendancemodal_manualattendancemodal",
+      "label": "ManualAttendanceModal",
+      "file_type": "code",
+      "source_file": "src/components/ui/ManualAttendanceModal.tsx",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_modal_modal",
+      "label": "Modal",
+      "file_type": "code",
+      "source_file": "src/components/ui/Modal.tsx",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_pagination_pagination",
+      "label": "Pagination",
+      "file_type": "code",
+      "source_file": "src/components/ui/Pagination.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_searchinput_searchinput",
+      "label": "SearchInput",
+      "file_type": "code",
+      "source_file": "src/components/ui/SearchInput.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_statscard_statscard",
+      "label": "StatsCard",
+      "file_type": "code",
+      "source_file": "src/components/ui/StatsCard.tsx",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_table_table",
+      "label": "Table",
+      "file_type": "code",
+      "source_file": "src/components/ui/Table.tsx",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_tabs_tabs",
+      "label": "Tabs",
+      "file_type": "code",
+      "source_file": "src/components/ui/Tabs.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_toast_toastcontainer",
+      "label": "ToastContainer",
+      "file_type": "code",
+      "source_file": "src/components/ui/Toast.tsx",
+      "source_location": "L59",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_context_authcontext_authprovider",
+      "label": "AuthProvider",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_context_authcontext_useauth",
+      "label": "useAuth",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L102",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useactivitylogs_useactivitylogs",
+      "label": "useActivityLogs",
+      "file_type": "code",
+      "source_file": "src/hooks/useActivityLogs.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useadminsettings_adminsettings",
+      "label": "AdminSettings",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useadminsettings_shiftconfig",
+      "label": "ShiftConfig",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useadminsettings_useadminsettings",
+      "label": "useAdminSettings",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useattendance_useattendance",
+      "label": "useAttendance",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useattendancerate_period",
+      "label": "Period",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useattendancerate_employeestat",
+      "label": "EmployeeStat",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useattendancerate_useattendancerate",
+      "label": "useAttendanceRate",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_statusdistribution",
+      "label": "StatusDistribution",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_dailyattendance",
+      "label": "DailyAttendance",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_latetrend",
+      "label": "LateTrend",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_dashboardanalytics",
+      "label": "DashboardAnalytics",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_period",
+      "label": "Period",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L34",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usedashboardanalytics_usedashboardanalytics",
+      "label": "useDashboardAnalytics",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useemployees_useemployees",
+      "label": "useEmployees",
+      "file_type": "code",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L59",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useleaverequests_leaverequest",
+      "label": "LeaveRequest",
+      "file_type": "code",
+      "source_file": "src/hooks/useLeaveRequests.ts",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useleaverequests_useleaverequests",
+      "label": "useLeaveRequests",
+      "file_type": "code",
+      "source_file": "src/hooks/useLeaveRequests.ts",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useoffices_useoffices",
+      "label": "useOffices",
+      "file_type": "code",
+      "source_file": "src/hooks/useOffices.ts",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usereports_usereports",
+      "label": "useReports",
+      "file_type": "code",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L161",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_database_types_json",
+      "label": "Json",
+      "file_type": "code",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_database_types_database",
+      "label": "Database",
+      "file_type": "code",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_firebase_admin_getfirebaseadminapp",
+      "label": "getFirebaseAdminApp",
+      "file_type": "code",
+      "source_file": "src/lib/firebase-admin.ts",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_firebase_admin_sendfcmpushnotification",
+      "label": "sendFcmPushNotification",
+      "file_type": "code",
+      "source_file": "src/lib/firebase-admin.ts",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_safe_fetch_safefetchjson",
+      "label": "safeFetchJson",
+      "file_type": "code",
+      "source_file": "src/lib/safe-fetch.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibdate",
+      "label": "getWIBDate",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibstartofday",
+      "label": "getWIBStartOfDay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibendofday",
+      "label": "getWIBEndOfDay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibdaterange",
+      "label": "getWIBDateRange",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibtime",
+      "label": "formatWIBTime",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibdate",
+      "label": "formatWIBDate",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibdaysago",
+      "label": "getWIBDaysAgo",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L77",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibtimewithseconds",
+      "label": "formatWIBTimeWithSeconds",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L87",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibdatedisplay",
+      "label": "formatWIBDateDisplay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L101",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibdateshort",
+      "label": "formatWIBDateShort",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L114",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibdateheader",
+      "label": "formatWIBDateHeader",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L127",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibmonth",
+      "label": "formatWIBMonth",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L143",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibcharttick",
+      "label": "formatWIBChartTick",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L156",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_formatwibchartlabel",
+      "label": "formatWIBChartLabel",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L168",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_timezone_getwibdateobj",
+      "label": "getWIBDateObj",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L182",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_utils_calculatedistance",
+      "label": "calculateDistance",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_utils_formatdistance",
+      "label": "formatDistance",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_utils_cn",
+      "label": "cn",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_middleware_middleware",
+      "label": "middleware",
+      "file_type": "code",
+      "source_file": "src/middleware.ts",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_userrole",
+      "label": "UserRole",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_shifttype",
+      "label": "ShiftType",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_attendancestatus",
+      "label": "AttendanceStatus",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_profile",
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_office",
+      "label": "Office",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_attendance",
+      "label": "Attendance",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_attendancelog",
+      "label": "AttendanceLog",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L61",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_attendancewithuser",
+      "label": "AttendanceWithUser",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_location",
+      "label": "Location",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L76",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_announcementpriority",
+      "label": "AnnouncementPriority",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L82",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_announcementtargettype",
+      "label": "AnnouncementTargetType",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L83",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_announcement",
+      "label": "Announcement",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L85",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_index_announcementread",
+      "label": "AnnouncementRead",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L100",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_utils_supabase_client_createclient",
+      "label": "createClient",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/client.ts",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_utils_supabase_middleware_updatesession",
+      "label": "updateSession",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/middleware.ts",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_utils_supabase_server_createclient",
+      "label": "createClient",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/server.ts",
+      "source_location": "L4",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_hooks_useactivitylogs_useactivitylogs",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_components_ui_daterangepicker_daterangepicker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_components_ui_table_table",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_types_index_attendancelog",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_activity_logs_page",
+      "target": "src_lib_timezone_formatwibtimewithseconds",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_hooks_useemployees_useemployees",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_components_ui_forminput_forminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_admins_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_lib_safe_fetch_safefetchjson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_announcements_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_lib_timezone_getwibstartofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_lib_timezone_getwibendofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_anomalies_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_useattendancerate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_employeestat",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_period",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_attendance_rate_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_attendance_rate_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_driver_requests_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_hooks_useemployees_useemployees",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_hooks_useoffices_useoffices",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_forminput_forminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_components_ui_forminput_formselect",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_types_index_userrole",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_types_index_shifttype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_employees_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_layout",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_layout",
+      "target": "src_components_admin_sidebar_sidebar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_layout",
+      "target": "src_components_admin_sidebar_mobilemenubutton",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_layout",
+      "target": "src_components_ui_toast_toastcontainer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_hooks_useleaverequests_useleaverequests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_hooks_useleaverequests_leaverequest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_components_ui_tabs_tabs",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_components_ui_forminput_forminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_leave_requests_page",
+      "target": "src_components_ui_forminput_formselect",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_lib_timezone_getwibstartofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_lib_timezone_formatwibtimewithseconds",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monitoring_page",
+      "target": "src_lib_timezone_formatwibdateshort",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_monthly_recap_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/monthly-recap/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_hooks_useoffices_useoffices",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_components_ui_forminput_forminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_offices_page",
+      "target": "src_lib_timezone_formatwibdateshort",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_hooks_useattendance_useattendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_hooks_useoffices_useoffices",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_hooks_usedashboardanalytics_usedashboardanalytics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_hooks_usedashboardanalytics_period",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_getwibdateobj",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_formatwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_formatwibdateheader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_page",
+      "target": "src_lib_timezone_formatwibmonth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_lib_safe_fetch_safefetchjson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_password_requests_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_daterangepicker_daterangepicker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_table_table",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_components_ui_modal_modal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_getwibdaterange",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_formatwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_performance_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_components_ui_daterangepicker_daterangepicker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_photos_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_hooks_usereports_usereports",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_daterangepicker_daterangepicker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_table_table",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_types_index_attendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_types_index_attendancestatus",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_types_index_shifttype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_formatwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_formatwibtimewithseconds",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_timezone_formatwibdateheader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_reports_page",
+      "target": "src_components_ui_manualattendancemodal_manualattendancemodal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_settings_page",
+      "target": "src_hooks_useadminsettings_useadminsettings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/settings/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_settings_page",
+      "target": "src_hooks_useadminsettings_shiftconfig",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/settings/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_admin_settings_page",
+      "target": "src_components_ui_forminput_forminput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/admin/settings/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_id_reads_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/[id]/reads/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_id_resend_push_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/[id]/resend-push/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_id_resend_push_route",
+      "target": "src_lib_firebase_admin_sendfcmpushnotification",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/[id]/resend-push/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_reads_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/reads/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_resend_push_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/resend-push/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_resend_push_route",
+      "target": "src_lib_firebase_admin_sendfcmpushnotification",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/resend-push/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_announcements_route",
+      "target": "src_lib_firebase_admin_sendfcmpushnotification",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_approve_password_request_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/approve-password-request/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_approve_password_request_route",
+      "target": "src_lib_firebase_admin_sendfcmpushnotification",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/approve-password-request/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_create_user_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/create-user/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_delete_user_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/delete-user/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_update_user_role_route",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/update-user-role/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_api_admin_update_user_role_route",
+      "target": "src_lib_firebase_admin_sendfcmpushnotification",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/admin/update-user-role/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_useattendancerate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_employeestat",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_attendance_rate_page",
+      "target": "src_hooks_useattendancerate_period",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_attendance_rate_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_attendance_rate_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_layout",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_layout",
+      "target": "src_components_dashboard_viewersidebar_viewersidebar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_layout",
+      "target": "src_components_dashboard_viewersidebar_mobilemenubutton",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_layout",
+      "target": "src_components_ui_toast_toastcontainer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_lib_timezone_getwibstartofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_lib_timezone_formatwibtimewithseconds",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_monitoring_page",
+      "target": "src_lib_timezone_formatwibdateshort",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_hooks_useattendance_useattendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_hooks_useoffices_useoffices",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_hooks_usedashboardanalytics_usedashboardanalytics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_hooks_usedashboardanalytics_period",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_getwibdateobj",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_formatwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_formatwibdateheader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_page",
+      "target": "src_lib_timezone_formatwibmonth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_hooks_usereports_usereports",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_searchinput_searchinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_daterangepicker_daterangepicker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_pagination_pagination",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_statscard_statscard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_badge_badge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_components_ui_table_table",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_types_index_attendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_types_index_attendancestatus",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_types_index_shifttype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_timezone_formatwibtimewithseconds",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_dashboard_reports_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_history_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_history_page",
+      "target": "src_lib_timezone_formatwibdatedisplay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_history_page",
+      "target": "src_lib_timezone_formatwibtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_history_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_layout",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_layout",
+      "target": "src_components_ui_toast_toastcontainer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_leave_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/leave/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_hooks_useoffices_useoffices",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_lib_utils_calculatedistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_lib_utils_formatdistance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_lib_timezone_formatwibdateheader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_lib_timezone_getwibstartofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_page",
+      "target": "src_components_employee_selfiecapturemodal_selfiecapturemodal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_profile_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/profile/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_employee_role_request_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/employee/role-request/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_layout",
+      "target": "src_context_authcontext_authprovider",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_layout",
+      "target": "src_components_brandsplashscreen_brandsplashscreen",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_layout",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_login_page",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/login/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_login_page",
+      "target": "src_components_toast_toast",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/login/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_app_page",
+      "target": "src_utils_supabase_server_createclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_toast",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Toast.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_mappicker",
+      "target": "src_lib_safe_fetch_safefetchjson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/MapPicker.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_sidebar",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/Sidebar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_charts_analyticscharts",
+      "target": "src_components_admin_chartcard_chartcard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_charts_analyticscharts",
+      "target": "src_lib_timezone_formatwibcharttick",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_charts_analyticscharts",
+      "target": "src_lib_timezone_formatwibchartlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_charts_analyticscharts",
+      "target": "src_hooks_usedashboardanalytics_dashboardanalytics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_dashboard_viewersidebar",
+      "target": "src_context_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ViewerSidebar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_ui_manualattendancemodal",
+      "target": "src_hooks_useemployees_useemployees",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ManualAttendanceModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_ui_manualattendancemodal",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ManualAttendanceModal.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_context_authcontext",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useactivitylogs",
+      "target": "src_types_index_attendancelog",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useActivityLogs.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendance",
+      "target": "src_types_index_attendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendance",
+      "target": "src_lib_timezone_getwibstartofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendance",
+      "target": "src_lib_timezone_getwibendofday",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendancerate",
+      "target": "src_types_index_attendance",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendancerate",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendancerate",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendancerate",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usedashboardanalytics",
+      "target": "src_lib_timezone_getwibdate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usedashboardanalytics",
+      "target": "src_lib_timezone_getwibdaysago",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees",
+      "target": "src_lib_safe_fetch_safefetchjson",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees",
+      "target": "src_types_index_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees",
+      "target": "src_types_index_userrole",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees",
+      "target": "src_types_index_shifttype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useoffices",
+      "target": "src_types_index_office",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useOffices.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports",
+      "target": "src_types_index_attendancestatus",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports",
+      "target": "src_types_index_shifttype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports",
+      "target": "src_lib_timezone_getwibdaterange",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_lib_database_types",
+      "target": "src_types_index_userrole",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_middleware",
+      "target": "src_utils_supabase_middleware_updatesession",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/middleware.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports",
+      "target": "src_lib_timezone_getwibdaterange",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_components_admin_charts_analyticscharts_analyticschartsprops",
+      "target": "src_hooks_usedashboardanalytics_dashboardanalytics",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_context_authcontext_authcontexttype",
+      "target": "src_types_index_profile",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_context_authcontext_authproviderprops",
+      "target": "src_types_index_profile",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useattendance_useattendancereturn",
+      "target": "src_types_index_attendance",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees_employeeupdate",
+      "target": "src_types_index_userrole",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees_employeeupdate",
+      "target": "src_types_index_shifttype",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees_createemployeedata",
+      "target": "src_types_index_userrole",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useemployees_createemployeedata",
+      "target": "src_types_index_shifttype",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useoffices_useofficesreturn",
+      "target": "src_types_index_office",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useOffices.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_useoffices_useofficesreturn",
+      "target": "src_types_index_office",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useOffices.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports_reportfilters",
+      "target": "src_types_index_attendancestatus",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports_attendancewithprofile",
+      "target": "src_types_index_attendancestatus",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_hooks_usereports_attendancewithprofile",
+      "target": "src_types_index_shifttype",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_lib_database_types_database",
+      "target": "src_types_index_userrole",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "src_types_index_attendancewithuser",
+      "target": "src_types_index_attendance",
+      "relation": "inherits",
+      "context": "type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/types/index.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

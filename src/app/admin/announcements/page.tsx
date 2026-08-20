@@ -23,14 +23,18 @@ import {
   XCircle, 
   Calendar,
   Building,
-  Bell
+  Bell,
+  Link as LinkIcon,
+  ExternalLink,
+  Trash2
 } from 'lucide-react';
 
 interface EmployeeOption {
   id: string;
   full_name: string;
-  department?: string;
   email: string;
+  department?: string;
+  role: string;
 }
 
 export default function AdminAnnouncementsPage() {
@@ -51,6 +55,7 @@ export default function AdminAnnouncementsPage() {
   const [selectedDepts, setSelectedDepts] = useState<string[]>([]);
   const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
   const [expiresAt, setExpiresAt] = useState('');
+  const [linkUrl, setLinkUrl] = useState('');
 
   // Options from DB
   const [employees, setEmployees] = useState<EmployeeOption[]>([]);
@@ -62,12 +67,15 @@ export default function AdminAnnouncementsPage() {
   const [trackingLoading, setTrackingLoading] = useState(false);
   const [trackingSearch, setTrackingSearch] = useState('');
   const [resendingId, setResendingId] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const handleResendPush = async (item: any) => {
     setResendingId(item.id);
     try {
-      const { ok, data, error } = await safeFetchJson(`/api/admin/announcements/${item.id}/resend-push`, {
+      const { ok, data, error } = await safeFetchJson('/api/admin/announcements/resend-push', {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: item.id }),
       });
       if (!ok) throw new Error(error || 'Gagal mengirim notifikasi');
       toast.success(data?.message || `Push notification terkirim ke ${data?.count || 0} perangkat!`);
@@ -150,6 +158,7 @@ export default function AdminAnnouncementsPage() {
           target_type: targetType,
           target_values: targetValues,
           expires_at: formattedExpiresAt,
+          link_url: linkUrl.trim() || undefined,
         }),
       });
 
@@ -175,6 +184,7 @@ export default function AdminAnnouncementsPage() {
     setSelectedDepts([]);
     setSelectedUserIds([]);
     setExpiresAt('');
+    setLinkUrl('');
   };
 
   const openTrackingModal = async (announcement: any) => {
@@ -182,7 +192,7 @@ export default function AdminAnnouncementsPage() {
     setTrackingLoading(true);
     setTrackingSearch('');
     try {
-      const { ok, data, error } = await safeFetchJson(`/api/admin/announcements/${announcement.id}/reads`);
+      const { ok, data, error } = await safeFetchJson(`/api/admin/announcements/reads?id=${announcement.id}`);
       if (!ok) throw new Error(error || 'Gagal memuat detail keterbacaan');
       setReadStats(data);
     } catch (err: any) {
@@ -193,15 +203,32 @@ export default function AdminAnnouncementsPage() {
     }
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Apakah Anda yakin ingin menghapus pengumuman ini?')) return;
+  const handleDelete = async (id: string, itemTitle?: string) => {
+    const confirmMsg = itemTitle 
+      ? `Apakah Anda yakin ingin menghapus pengumuman "${itemTitle}"?\nPengumuman akan dihapus permanen dari sistem dan aplikasi HP karyawan.`
+      : 'Apakah Anda yakin ingin menghapus pengumuman ini?';
+    if (!confirm(confirmMsg)) return;
+
+    setDeletingId(id);
     try {
-      const { error } = await supabase.from('announcements').delete().eq('id', id);
-      if (error) throw error;
-      toast.success('Pengumuman berhasil dihapus');
+      const { ok, data, error } = await safeFetchJson('/api/admin/announcements', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+
+      if (!ok) throw new Error(error || 'Gagal menghapus pengumuman');
+
+      toast.success(data?.message || 'Pengumuman berhasil dihapus');
+      if (selectedAnnouncement?.id === id) {
+        setSelectedAnnouncement(null);
+      }
       fetchAnnouncements();
     } catch (err: any) {
+      console.error('Error deleting announcement:', err);
       toast.error(err.message || 'Gagal menghapus pengumuman');
+    } finally {
+      setDeletingId(null);
     }
   };
 
@@ -284,6 +311,16 @@ export default function AdminAnnouncementsPage() {
                       <td className="px-5 py-4 max-w-xs">
                         <p className="font-semibold text-gray-900 text-sm line-clamp-1">{item.title}</p>
                         <p className="text-xs text-gray-500 line-clamp-2 mt-0.5">{item.body}</p>
+                        {item.link_url && (
+                          <a
+                            href={item.link_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 mt-1 text-xs text-blue-600 hover:text-blue-800 hover:underline font-medium"
+                          >
+                            <ExternalLink className="w-3 h-3" /> Tautan Terlampir
+                          </a>
+                        )}
                       </td>
                       <td className="px-5 py-4">
                         <Badge
@@ -358,11 +395,16 @@ export default function AdminAnnouncementsPage() {
                             <Eye className="w-3.5 h-3.5" /> Detail Pembaca
                           </button>
                           <button
-                            onClick={() => handleDelete(item.id)}
-                            className="p-1.5 text-red-600 hover:bg-red-50 rounded-lg border border-red-200 transition-colors"
+                            onClick={() => handleDelete(item.id, item.title)}
+                            disabled={deletingId === item.id}
+                            className="p-1.5 text-red-600 hover:bg-red-50 disabled:opacity-50 rounded-lg border border-red-200 transition-colors"
                             title="Hapus Pengumuman"
                           >
-                            <XCircle className="w-4 h-4" />
+                            {deletingId === item.id ? (
+                              <div className="w-4 h-4 border-2 border-red-600 border-t-transparent rounded-full animate-spin" />
+                            ) : (
+                              <Trash2 className="w-4 h-4" />
+                            )}
                           </button>
                         </div>
                       </td>
@@ -406,6 +448,25 @@ export default function AdminAnnouncementsPage() {
               placeholder="Tuliskan isi pengumuman selengkapnya di sini..."
               className="w-full border border-gray-300 rounded-xl px-3.5 py-2 text-sm text-gray-900 bg-white placeholder:text-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
             />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1">Link / URL Tautan (Opsional)</label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                <LinkIcon className="w-4 h-4" />
+              </div>
+              <input
+                type="url"
+                value={linkUrl}
+                onChange={(e) => setLinkUrl(e.target.value)}
+                placeholder="https://drive.google.com/... atau https://pertamina.com/..."
+                className="w-full border border-gray-300 rounded-xl pl-9 pr-3.5 py-2 text-sm text-gray-900 bg-white placeholder:text-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <p className="text-xs text-gray-400 mt-1">
+              Penerima di HP dapat langsung mengklik tautan ini untuk membuka web/dokumen.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -529,6 +590,18 @@ export default function AdminAnnouncementsPage() {
                 </Badge>
               </div>
               <p className="text-gray-600 text-xs bg-white p-2.5 rounded-lg border">{selectedAnnouncement.body}</p>
+              {selectedAnnouncement.link_url && (
+                <div className="pt-1">
+                  <a
+                    href={selectedAnnouncement.link_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-xs font-semibold transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" /> Buka Tautan: {selectedAnnouncement.link_url}
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Read Stats Bar */}
@@ -611,7 +684,18 @@ export default function AdminAnnouncementsPage() {
               </table>
             </div>
 
-            <div className="flex justify-end pt-2">
+            <div className="flex items-center justify-between pt-3 border-t">
+              <Button
+                type="button"
+                variant="danger"
+                disabled={deletingId === selectedAnnouncement.id}
+                loading={deletingId === selectedAnnouncement.id}
+                onClick={() => handleDelete(selectedAnnouncement.id, selectedAnnouncement.title)}
+                className="flex items-center gap-1.5 text-xs px-3 py-1.5"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                Hapus Pengumuman
+              </Button>
               <Button variant="secondary" onClick={() => setSelectedAnnouncement(null)}>
                 Tutup
               </Button>

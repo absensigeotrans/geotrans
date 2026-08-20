@@ -1,0 +1,1345 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "ActivityLogsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/activity-logs/page.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_app_admin_activity_logs_page_activitylogspage",
+      "community": 2,
+      "norm_label": "activitylogspage"
+    },
+    {
+      "label": "AdminsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/admins/page.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_app_admin_admins_page_adminspage",
+      "community": 3,
+      "norm_label": "adminspage"
+    },
+    {
+      "label": "AdminAnnouncementsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/announcements/page.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "src_app_admin_announcements_page_adminannouncementspage",
+      "community": 4,
+      "norm_label": "adminannouncementspage"
+    },
+    {
+      "label": "AnomaliesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/anomalies/page.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "src_app_admin_anomalies_page_anomaliespage",
+      "community": 5,
+      "norm_label": "anomaliespage"
+    },
+    {
+      "label": "AttendanceRatePage",
+      "file_type": "code",
+      "source_file": "src/app/admin/attendance-rate/page.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_app_admin_attendance_rate_page_attendanceratepage",
+      "community": 6,
+      "norm_label": "attendanceratepage"
+    },
+    {
+      "label": "AdminDriverRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/driver-requests/page.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_app_admin_driver_requests_page_admindriverrequestspage",
+      "community": 7,
+      "norm_label": "admindriverrequestspage"
+    },
+    {
+      "label": "EmployeesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/employees/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_app_admin_employees_page_employeespage",
+      "community": 8,
+      "norm_label": "employeespage"
+    },
+    {
+      "label": "AdminLayout",
+      "file_type": "code",
+      "source_file": "src/app/admin/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_admin_layout_adminlayout",
+      "community": 9,
+      "norm_label": "adminlayout"
+    },
+    {
+      "label": "LeaveRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/leave-requests/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_app_admin_leave_requests_page_leaverequestspage",
+      "community": 10,
+      "norm_label": "leaverequestspage"
+    },
+    {
+      "label": "MonitoringPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/monitoring/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "src_app_admin_monitoring_page_monitoringpage",
+      "community": 11,
+      "norm_label": "monitoringpage"
+    },
+    {
+      "label": "MonthlyRecapPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/monthly-recap/page.tsx",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "src_app_admin_monthly_recap_page_monthlyrecappage",
+      "community": 12,
+      "norm_label": "monthlyrecappage"
+    },
+    {
+      "label": "OfficesPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/offices/page.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "src_app_admin_offices_page_officespage",
+      "community": 13,
+      "norm_label": "officespage"
+    },
+    {
+      "label": "AdminDashboard",
+      "file_type": "code",
+      "source_file": "src/app/admin/page.tsx",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "src_app_admin_page_admindashboard",
+      "community": 14,
+      "norm_label": "admindashboard"
+    },
+    {
+      "label": "AdminPasswordRequestsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/password-requests/page.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_app_admin_password_requests_page_adminpasswordrequestspage",
+      "community": 15,
+      "norm_label": "adminpasswordrequestspage"
+    },
+    {
+      "label": "PerformancePage",
+      "file_type": "code",
+      "source_file": "src/app/admin/performance/page.tsx",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "src_app_admin_performance_page_performancepage",
+      "community": 16,
+      "norm_label": "performancepage"
+    },
+    {
+      "label": "PhotosPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/photos/page.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_app_admin_photos_page_photospage",
+      "community": 17,
+      "norm_label": "photospage"
+    },
+    {
+      "label": "ReportsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/reports/page.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "src_app_admin_reports_page_reportspage",
+      "community": 18,
+      "norm_label": "reportspage"
+    },
+    {
+      "label": "SettingsPage",
+      "file_type": "code",
+      "source_file": "src/app/admin/settings/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_admin_settings_page_settingspage",
+      "community": 19,
+      "norm_label": "settingspage"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/[id]/reads/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_id_reads_route_get",
+      "community": 20,
+      "norm_label": "get"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/[id]/resend-push/route.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_id_resend_push_route_post",
+      "community": 21,
+      "norm_label": "post"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/reads/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_reads_route_get",
+      "community": 22,
+      "norm_label": "get"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/resend-push/route.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_resend_push_route_post",
+      "community": 23,
+      "norm_label": "post"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_route_get",
+      "community": 25,
+      "norm_label": "get"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_route_post",
+      "community": 26,
+      "norm_label": "post"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/announcements/route.ts",
+      "source_location": "L169",
+      "_origin": "ast",
+      "id": "src_app_api_admin_announcements_route_delete",
+      "community": 24,
+      "norm_label": "delete"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/approve-password-request/route.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_app_api_admin_approve_password_request_route_post",
+      "community": 27,
+      "norm_label": "post"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/create-user/route.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_app_api_admin_create_user_route_post",
+      "community": 28,
+      "norm_label": "post"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/delete-user/route.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_app_api_admin_delete_user_route_post",
+      "community": 29,
+      "norm_label": "post"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "src/app/api/admin/update-user-role/route.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_api_admin_update_user_role_route_post",
+      "community": 30,
+      "norm_label": "post"
+    },
+    {
+      "label": "ViewerAttendanceRatePage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/attendance-rate/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_app_dashboard_attendance_rate_page_viewerattendanceratepage",
+      "community": 31,
+      "norm_label": "viewerattendanceratepage"
+    },
+    {
+      "label": "DashboardLayout",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_dashboard_layout_dashboardlayout",
+      "community": 32,
+      "norm_label": "dashboardlayout"
+    },
+    {
+      "label": "ViewerMonitoringPage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/monitoring/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "src_app_dashboard_monitoring_page_viewermonitoringpage",
+      "community": 33,
+      "norm_label": "viewermonitoringpage"
+    },
+    {
+      "label": "ViewerDashboard",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/page.tsx",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "src_app_dashboard_page_viewerdashboard",
+      "community": 34,
+      "norm_label": "viewerdashboard"
+    },
+    {
+      "label": "ViewerReportsPage",
+      "file_type": "code",
+      "source_file": "src/app/dashboard/reports/page.tsx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "src_app_dashboard_reports_page_viewerreportspage",
+      "community": 35,
+      "norm_label": "viewerreportspage"
+    },
+    {
+      "label": "EmployeeHistoryPage",
+      "file_type": "code",
+      "source_file": "src/app/employee/history/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_app_employee_history_page_employeehistorypage",
+      "community": 36,
+      "norm_label": "employeehistorypage"
+    },
+    {
+      "label": "EmployeeLayout",
+      "file_type": "code",
+      "source_file": "src/app/employee/layout.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_employee_layout_employeelayout",
+      "community": 37,
+      "norm_label": "employeelayout"
+    },
+    {
+      "label": "EmployeeLeavePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/leave/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_employee_leave_page_employeeleavepage",
+      "community": 38,
+      "norm_label": "employeeleavepage"
+    },
+    {
+      "label": "EmployeeAttendancePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/page.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "src_app_employee_page_employeeattendancepage",
+      "community": 39,
+      "norm_label": "employeeattendancepage"
+    },
+    {
+      "label": "EmployeeProfilePage",
+      "file_type": "code",
+      "source_file": "src/app/employee/profile/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_app_employee_profile_page_employeeprofilepage",
+      "community": 40,
+      "norm_label": "employeeprofilepage"
+    },
+    {
+      "label": "EmployeeRoleRequestPage",
+      "file_type": "code",
+      "source_file": "src/app/employee/role-request/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_app_employee_role_request_page_employeerolerequestpage",
+      "community": 41,
+      "norm_label": "employeerolerequestpage"
+    },
+    {
+      "label": "HistoryPage",
+      "file_type": "code",
+      "source_file": "src/app/history/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_app_history_page_historypage",
+      "community": 42,
+      "norm_label": "historypage"
+    },
+    {
+      "label": "RootLayout",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "src_app_layout_rootlayout",
+      "community": 43,
+      "norm_label": "rootlayout"
+    },
+    {
+      "label": "LoginPage",
+      "file_type": "code",
+      "source_file": "src/app/login/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_app_login_page_loginpage",
+      "community": 44,
+      "norm_label": "loginpage"
+    },
+    {
+      "label": "OfflinePage",
+      "file_type": "code",
+      "source_file": "src/app/offline/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_app_offline_page_offlinepage",
+      "community": 45,
+      "norm_label": "offlinepage"
+    },
+    {
+      "label": "Home",
+      "file_type": "code",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_page_home",
+      "community": 46,
+      "norm_label": "home"
+    },
+    {
+      "label": "BrandSplashScreen",
+      "file_type": "code",
+      "source_file": "src/components/BrandSplashScreen.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_components_brandsplashscreen_brandsplashscreen",
+      "community": 54,
+      "norm_label": "brandsplashscreen"
+    },
+    {
+      "label": "Toast",
+      "file_type": "code",
+      "source_file": "src/components/Toast.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_components_toast_toast",
+      "community": 59,
+      "norm_label": "toast"
+    },
+    {
+      "label": "ChartCard",
+      "file_type": "code",
+      "source_file": "src/components/admin/ChartCard.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_components_admin_chartcard_chartcard",
+      "community": 47,
+      "norm_label": "chartcard"
+    },
+    {
+      "label": "MapPicker",
+      "file_type": "code",
+      "source_file": "src/components/admin/MapPicker.tsx",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "src_components_admin_mappicker_mappicker",
+      "community": 51,
+      "norm_label": "mappicker"
+    },
+    {
+      "label": "Sidebar",
+      "file_type": "code",
+      "source_file": "src/components/admin/Sidebar.tsx",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "src_components_admin_sidebar_sidebar",
+      "community": 53,
+      "norm_label": "sidebar"
+    },
+    {
+      "label": "MobileMenuButton",
+      "file_type": "code",
+      "source_file": "src/components/admin/Sidebar.tsx",
+      "source_location": "L320",
+      "_origin": "ast",
+      "id": "src_components_admin_sidebar_mobilemenubutton",
+      "community": 52,
+      "norm_label": "mobilemenubutton"
+    },
+    {
+      "label": "StatusPieChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "src_components_admin_charts_analyticscharts_statuspiechart",
+      "community": 50,
+      "norm_label": "statuspiechart"
+    },
+    {
+      "label": "DailyAttendanceChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "src_components_admin_charts_analyticscharts_dailyattendancechart",
+      "community": 48,
+      "norm_label": "dailyattendancechart"
+    },
+    {
+      "label": "LateTrendChart",
+      "file_type": "code",
+      "source_file": "src/components/admin/charts/AnalyticsCharts.tsx",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "src_components_admin_charts_analyticscharts_latetrendchart",
+      "community": 49,
+      "norm_label": "latetrendchart"
+    },
+    {
+      "label": "ViewerSidebar",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ViewerSidebar.tsx",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "src_components_dashboard_viewersidebar_viewersidebar",
+      "community": 56,
+      "norm_label": "viewersidebar"
+    },
+    {
+      "label": "MobileMenuButton",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ViewerSidebar.tsx",
+      "source_location": "L223",
+      "_origin": "ast",
+      "id": "src_components_dashboard_viewersidebar_mobilemenubutton",
+      "community": 55,
+      "norm_label": "mobilemenubutton"
+    },
+    {
+      "label": "EmployeeMap",
+      "file_type": "code",
+      "source_file": "src/components/employee/EmployeeMap.tsx",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "src_components_employee_employeemap_employeemap",
+      "community": 57,
+      "norm_label": "employeemap"
+    },
+    {
+      "label": "SelfieCaptureModal",
+      "file_type": "code",
+      "source_file": "src/components/employee/SelfieCaptureModal.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_components_employee_selfiecapturemodal_selfiecapturemodal",
+      "community": 58,
+      "norm_label": "selfiecapturemodal"
+    },
+    {
+      "label": "Badge",
+      "file_type": "code",
+      "source_file": "src/components/ui/Badge.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_components_ui_badge_badge",
+      "community": 60,
+      "norm_label": "badge"
+    },
+    {
+      "label": "DateRangePicker",
+      "file_type": "code",
+      "source_file": "src/components/ui/DateRangePicker.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_components_ui_daterangepicker_daterangepicker",
+      "community": 61,
+      "norm_label": "daterangepicker"
+    },
+    {
+      "label": "FormInput",
+      "file_type": "code",
+      "source_file": "src/components/ui/FormInput.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_components_ui_forminput_forminput",
+      "community": 62,
+      "norm_label": "forminput"
+    },
+    {
+      "label": "FormSelect",
+      "file_type": "code",
+      "source_file": "src/components/ui/FormInput.tsx",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "src_components_ui_forminput_formselect",
+      "community": 63,
+      "norm_label": "formselect"
+    },
+    {
+      "label": "ManualAttendanceModal",
+      "file_type": "code",
+      "source_file": "src/components/ui/ManualAttendanceModal.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "src_components_ui_manualattendancemodal_manualattendancemodal",
+      "community": 64,
+      "norm_label": "manualattendancemodal"
+    },
+    {
+      "label": "Modal",
+      "file_type": "code",
+      "source_file": "src/components/ui/Modal.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_components_ui_modal_modal",
+      "community": 65,
+      "norm_label": "modal"
+    },
+    {
+      "label": "Pagination",
+      "file_type": "code",
+      "source_file": "src/components/ui/Pagination.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_components_ui_pagination_pagination",
+      "community": 66,
+      "norm_label": "pagination"
+    },
+    {
+      "label": "SearchInput",
+      "file_type": "code",
+      "source_file": "src/components/ui/SearchInput.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_components_ui_searchinput_searchinput",
+      "community": 67,
+      "norm_label": "searchinput"
+    },
+    {
+      "label": "StatsCard",
+      "file_type": "code",
+      "source_file": "src/components/ui/StatsCard.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_components_ui_statscard_statscard",
+      "community": 68,
+      "norm_label": "statscard"
+    },
+    {
+      "label": "Table",
+      "file_type": "code",
+      "source_file": "src/components/ui/Table.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_components_ui_table_table",
+      "community": 69,
+      "norm_label": "table"
+    },
+    {
+      "label": "Tabs",
+      "file_type": "code",
+      "source_file": "src/components/ui/Tabs.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "src_components_ui_tabs_tabs",
+      "community": 70,
+      "norm_label": "tabs"
+    },
+    {
+      "label": "ToastContainer",
+      "file_type": "code",
+      "source_file": "src/components/ui/Toast.tsx",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "src_components_ui_toast_toastcontainer",
+      "community": 71,
+      "norm_label": "toastcontainer"
+    },
+    {
+      "label": "AuthProvider",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "src_context_authcontext_authprovider",
+      "community": 72,
+      "norm_label": "authprovider"
+    },
+    {
+      "label": "useAuth",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.tsx",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "src_context_authcontext_useauth",
+      "community": 73,
+      "norm_label": "useauth"
+    },
+    {
+      "label": "useActivityLogs",
+      "file_type": "code",
+      "source_file": "src/hooks/useActivityLogs.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_hooks_useactivitylogs_useactivitylogs",
+      "community": 74,
+      "norm_label": "useactivitylogs"
+    },
+    {
+      "label": "AdminSettings",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_hooks_useadminsettings_adminsettings",
+      "community": 75,
+      "norm_label": "adminsettings"
+    },
+    {
+      "label": "ShiftConfig",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_hooks_useadminsettings_shiftconfig",
+      "community": 76,
+      "norm_label": "shiftconfig"
+    },
+    {
+      "label": "useAdminSettings",
+      "file_type": "code",
+      "source_file": "src/hooks/useAdminSettings.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_hooks_useadminsettings_useadminsettings",
+      "community": 77,
+      "norm_label": "useadminsettings"
+    },
+    {
+      "label": "useAttendance",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendance.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_hooks_useattendance_useattendance",
+      "community": 78,
+      "norm_label": "useattendance"
+    },
+    {
+      "label": "Period",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_hooks_useattendancerate_period",
+      "community": 80,
+      "norm_label": "period"
+    },
+    {
+      "label": "EmployeeStat",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_hooks_useattendancerate_employeestat",
+      "community": 79,
+      "norm_label": "employeestat"
+    },
+    {
+      "label": "useAttendanceRate",
+      "file_type": "code",
+      "source_file": "src/hooks/useAttendanceRate.ts",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "src_hooks_useattendancerate_useattendancerate",
+      "community": 81,
+      "norm_label": "useattendancerate"
+    },
+    {
+      "label": "StatusDistribution",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_statusdistribution",
+      "community": 86,
+      "norm_label": "statusdistribution"
+    },
+    {
+      "label": "DailyAttendance",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_dailyattendance",
+      "community": 82,
+      "norm_label": "dailyattendance"
+    },
+    {
+      "label": "LateTrend",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_latetrend",
+      "community": 84,
+      "norm_label": "latetrend"
+    },
+    {
+      "label": "DashboardAnalytics",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_dashboardanalytics",
+      "community": 83,
+      "norm_label": "dashboardanalytics"
+    },
+    {
+      "label": "Period",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_period",
+      "community": 85,
+      "norm_label": "period"
+    },
+    {
+      "label": "useDashboardAnalytics",
+      "file_type": "code",
+      "source_file": "src/hooks/useDashboardAnalytics.ts",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "src_hooks_usedashboardanalytics_usedashboardanalytics",
+      "community": 87,
+      "norm_label": "usedashboardanalytics"
+    },
+    {
+      "label": "useEmployees",
+      "file_type": "code",
+      "source_file": "src/hooks/useEmployees.ts",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "src_hooks_useemployees_useemployees",
+      "community": 88,
+      "norm_label": "useemployees"
+    },
+    {
+      "label": "LeaveRequest",
+      "file_type": "code",
+      "source_file": "src/hooks/useLeaveRequests.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_hooks_useleaverequests_leaverequest",
+      "community": 89,
+      "norm_label": "leaverequest"
+    },
+    {
+      "label": "useLeaveRequests",
+      "file_type": "code",
+      "source_file": "src/hooks/useLeaveRequests.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "src_hooks_useleaverequests_useleaverequests",
+      "community": 90,
+      "norm_label": "useleaverequests"
+    },
+    {
+      "label": "useOffices",
+      "file_type": "code",
+      "source_file": "src/hooks/useOffices.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_hooks_useoffices_useoffices",
+      "community": 91,
+      "norm_label": "useoffices"
+    },
+    {
+      "label": "useReports",
+      "file_type": "code",
+      "source_file": "src/hooks/useReports.ts",
+      "source_location": "L161",
+      "_origin": "ast",
+      "id": "src_hooks_usereports_usereports",
+      "community": 92,
+      "norm_label": "usereports"
+    },
+    {
+      "label": "Json",
+      "file_type": "code",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_lib_database_types_json",
+      "community": 93,
+      "norm_label": "json"
+    },
+    {
+      "label": "Database",
+      "file_type": "code",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_lib_database_types_database",
+      "community": 0,
+      "norm_label": "database"
+    },
+    {
+      "label": "getFirebaseAdminApp",
+      "file_type": "code",
+      "source_file": "src/lib/firebase-admin.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_lib_firebase_admin_getfirebaseadminapp",
+      "community": 94,
+      "norm_label": "getfirebaseadminapp"
+    },
+    {
+      "label": "sendFcmPushNotification",
+      "file_type": "code",
+      "source_file": "src/lib/firebase-admin.ts",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "src_lib_firebase_admin_sendfcmpushnotification",
+      "community": 95,
+      "norm_label": "sendfcmpushnotification"
+    },
+    {
+      "label": "safeFetchJson",
+      "file_type": "code",
+      "source_file": "src/lib/safe-fetch.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_lib_safe_fetch_safefetchjson",
+      "community": 96,
+      "norm_label": "safefetchjson"
+    },
+    {
+      "label": "getWIBDate",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibdate",
+      "community": 106,
+      "norm_label": "getwibdate"
+    },
+    {
+      "label": "getWIBStartOfDay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibstartofday",
+      "community": 111,
+      "norm_label": "getwibstartofday"
+    },
+    {
+      "label": "getWIBEndOfDay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibendofday",
+      "community": 110,
+      "norm_label": "getwibendofday"
+    },
+    {
+      "label": "getWIBDateRange",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibdaterange",
+      "community": 108,
+      "norm_label": "getwibdaterange"
+    },
+    {
+      "label": "formatWIBTime",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibtime",
+      "community": 104,
+      "norm_label": "formatwibtime"
+    },
+    {
+      "label": "formatWIBDate",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibdate",
+      "community": 99,
+      "norm_label": "formatwibdate"
+    },
+    {
+      "label": "getWIBDaysAgo",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibdaysago",
+      "community": 109,
+      "norm_label": "getwibdaysago"
+    },
+    {
+      "label": "formatWIBTimeWithSeconds",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibtimewithseconds",
+      "community": 105,
+      "norm_label": "formatwibtimewithseconds"
+    },
+    {
+      "label": "formatWIBDateDisplay",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibdatedisplay",
+      "community": 100,
+      "norm_label": "formatwibdatedisplay"
+    },
+    {
+      "label": "formatWIBDateShort",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibdateshort",
+      "community": 102,
+      "norm_label": "formatwibdateshort"
+    },
+    {
+      "label": "formatWIBDateHeader",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibdateheader",
+      "community": 101,
+      "norm_label": "formatwibdateheader"
+    },
+    {
+      "label": "formatWIBMonth",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibmonth",
+      "community": 103,
+      "norm_label": "formatwibmonth"
+    },
+    {
+      "label": "formatWIBChartTick",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L156",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibcharttick",
+      "community": 98,
+      "norm_label": "formatwibcharttick"
+    },
+    {
+      "label": "formatWIBChartLabel",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L168",
+      "_origin": "ast",
+      "id": "src_lib_timezone_formatwibchartlabel",
+      "community": 97,
+      "norm_label": "formatwibchartlabel"
+    },
+    {
+      "label": "getWIBDateObj",
+      "file_type": "code",
+      "source_file": "src/lib/timezone.ts",
+      "source_location": "L182",
+      "_origin": "ast",
+      "id": "src_lib_timezone_getwibdateobj",
+      "community": 107,
+      "norm_label": "getwibdateobj"
+    },
+    {
+      "label": "calculateDistance",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_utils_calculatedistance",
+      "community": 112,
+      "norm_label": "calculatedistance"
+    },
+    {
+      "label": "formatDistance",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_lib_utils_formatdistance",
+      "community": 114,
+      "norm_label": "formatdistance"
+    },
+    {
+      "label": "cn",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "src_lib_utils_cn",
+      "community": 113,
+      "norm_label": "cn"
+    },
+    {
+      "label": "middleware",
+      "file_type": "code",
+      "source_file": "src/middleware.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_middleware_middleware",
+      "community": 115,
+      "norm_label": "middleware"
+    },
+    {
+      "label": "UserRole",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_types_index_userrole",
+      "community": 0,
+      "norm_label": "userrole"
+    },
+    {
+      "label": "ShiftType",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_types_index_shifttype",
+      "community": 125,
+      "norm_label": "shifttype"
+    },
+    {
+      "label": "AttendanceStatus",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_types_index_attendancestatus",
+      "community": 121,
+      "norm_label": "attendancestatus"
+    },
+    {
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_types_index_profile",
+      "community": 124,
+      "norm_label": "profile"
+    },
+    {
+      "label": "Office",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "src_types_index_office",
+      "community": 123,
+      "norm_label": "office"
+    },
+    {
+      "label": "Attendance",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "src_types_index_attendance",
+      "community": 1,
+      "norm_label": "attendance"
+    },
+    {
+      "label": "AttendanceLog",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "src_types_index_attendancelog",
+      "community": 120,
+      "norm_label": "attendancelog"
+    },
+    {
+      "label": "AttendanceWithUser",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "src_types_index_attendancewithuser",
+      "community": 1,
+      "norm_label": "attendancewithuser"
+    },
+    {
+      "label": "Location",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "src_types_index_location",
+      "community": 122,
+      "norm_label": "location"
+    },
+    {
+      "label": "AnnouncementPriority",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "src_types_index_announcementpriority",
+      "community": 117,
+      "norm_label": "announcementpriority"
+    },
+    {
+      "label": "AnnouncementTargetType",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "src_types_index_announcementtargettype",
+      "community": 119,
+      "norm_label": "announcementtargettype"
+    },
+    {
+      "label": "Announcement",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "src_types_index_announcement",
+      "community": 116,
+      "norm_label": "announcement"
+    },
+    {
+      "label": "AnnouncementRead",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "src_types_index_announcementread",
+      "community": 118,
+      "norm_label": "announcementread"
+    },
+    {
+      "label": "createClient",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/client.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_utils_supabase_client_createclient",
+      "community": 126,
+      "norm_label": "createclient"
+    },
+    {
+      "label": "updateSession",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/middleware.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_utils_supabase_middleware_updatesession",
+      "community": 127,
+      "norm_label": "updatesession"
+    },
+    {
+      "label": "createClient",
+      "file_type": "code",
+      "source_file": "src/utils/supabase/server.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_utils_supabase_server_createclient",
+      "community": 128,
+      "norm_label": "createclient"
+    }
+  ],
+  "links": [
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/database.types.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_database_types_database",
+      "target": "src_types_index_userrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "context": "type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/types/index.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_types_index_attendancewithuser",
+      "target": "src_types_index_attendance",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "a63edddbdb2ec01bbd72143a9f5ef0e40dfb26af"
+}

@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS public.announcements (
     target_values JSONB DEFAULT '[]'::jsonb,
     author_id UUID REFERENCES public.profiles(id) ON DELETE SET NULL,
     expires_at TIMESTAMPTZ,
+    link_url TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -101,7 +102,8 @@ RETURNS TABLE (
     expires_at TIMESTAMPTZ,
     created_at TIMESTAMPTZ,
     is_read BOOLEAN,
-    read_at TIMESTAMPTZ
+    read_at TIMESTAMPTZ,
+    link_url TEXT
 )
 LANGUAGE plpgsql
 SECURITY DEFINER
@@ -111,7 +113,7 @@ DECLARE
     v_user_id UUID := auth.uid();
     v_user_dept TEXT;
 BEGIN
-    SELECT department INTO v_user_dept FROM public.profiles WHERE id = v_user_id;
+    SELECT profiles.department INTO v_user_dept FROM public.profiles WHERE profiles.id = v_user_id;
 
     RETURN QUERY
     SELECT 
@@ -125,7 +127,8 @@ BEGIN
         a.expires_at,
         a.created_at,
         (ar.id IS NOT NULL) AS is_read,
-        ar.read_at
+        ar.read_at,
+        a.link_url
     FROM public.announcements a
     LEFT JOIN public.announcement_reads ar 
         ON a.id = ar.announcement_id AND ar.user_id = v_user_id

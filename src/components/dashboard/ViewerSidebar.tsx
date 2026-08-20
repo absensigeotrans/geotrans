@@ -103,9 +103,9 @@ export function ViewerSidebar({ open, onClose }: SidebarProps) {
         className={`
           fixed top-0 left-0 z-50 h-full w-64 bg-gradient-red-blue border-r
           transform transition-transform duration-300 ease-in-out
-          lg:translate-x-0 lg:static lg:z-auto lg:border-r lg:h-screen
+          lg:translate-x-0 lg:static lg:z-auto lg:border-r lg:min-h-screen lg:h-auto lg:self-stretch shrink-0
           flex flex-col shadow-xl
-          ${open ? 'translate-x-0' : '-translate-x-full'}
+          ${open ? 'translate-x-0 overflow-y-auto' : '-translate-x-full'}
         `}
       >
         <div className="flex items-center justify-between px-5 py-5 border-b border-white/20">
@@ -137,7 +137,7 @@ export function ViewerSidebar({ open, onClose }: SidebarProps) {
           </div>
         </div>
 
-        <nav className="p-3 space-y-1 flex-1 overflow-y-auto">
+        <nav className="p-3 space-y-1 flex-1 overflow-y-auto lg:overflow-visible">
           {[
             ...navItems,
             ...(profile?.role === 'admin' ? [{ href: '/admin/announcements', icon: Megaphone, label: 'Pengumuman' }] : []),

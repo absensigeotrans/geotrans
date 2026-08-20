@@ -129,16 +129,18 @@ export async function sendFcmPushNotification({
           title,
           body,
           sound: 'announcement_sound',
-          channelId: 'announcements_channel_v2',
+          channelId: 'announcements_channel_v4',
           priority: 'max',
           visibility: 'public',
+          defaultSound: false,
+          defaultVibrateTimings: true,
         },
       },
       apns: {
         payload: {
           aps: {
             alert: { title, body },
-            sound: 'default',
+            sound: 'announcement_sound.mp3',
             badge: 1,
           },
         },

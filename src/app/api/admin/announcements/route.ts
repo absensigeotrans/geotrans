@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { title, message, priority, target_type, target_values, expires_at } = body;
+    const { title, message, priority, target_type, target_values, expires_at, link_url } = body;
 
     if (!title || !message) {
       return NextResponse.json({ error: 'Judul dan isi pesan wajib diisi' }, { status: 400 });
@@ -114,6 +114,7 @@ export async function POST(req: NextRequest) {
         target_values: target_values || [],
         author_id: user.id,
         expires_at: expires_at || null,
+        link_url: link_url?.trim() || null,
       })
       .select()
       .single();
@@ -147,6 +148,7 @@ export async function POST(req: NextRequest) {
         announcement_id: announcement.id,
         priority: priority || 'normal',
         type: 'announcement',
+        link_url: link_url?.trim() || '',
       },
     });
 
@@ -163,4 +165,65 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: err.message || 'Gagal memproses' }, { status: 500 });
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const supabase = await createClient();
+    const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+    if (userError || !user) {
+      return NextResponse.json({ error: 'Unauthorized: Harap login terlebih dahulu' }, { status: 401 });
+    }
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single();
+
+    if (!profile || profile.role !== 'admin') {
+      return NextResponse.json({ error: 'Forbidden: Hanya Admin yang dapat menghapus pengumuman' }, { status: 403 });
+    }
+
+    const { searchParams } = new URL(req.url);
+    let id = searchParams.get('id');
+
+    if (!id) {
+      try {
+        const body = await req.json();
+        id = body?.id;
+      } catch (_) {
+        // query param fallback
+      }
+    }
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID Pengumuman wajib diberikan' }, { status: 400 });
+    }
+
+    // 1. Hapus riwayat baca terkait jika belum CASCADE
+    await supabaseAdmin
+      .from('announcement_reads')
+      .delete()
+      .eq('announcement_id', id);
+
+    // 2. Hapus pengumuman menggunakan supabaseAdmin
+    const { error: deleteError } = await supabaseAdmin
+      .from('announcements')
+      .delete()
+      .eq('id', id);
+
+    if (deleteError) {
+      return NextResponse.json({ error: `Gagal menghapus pengumuman: ${deleteError.message}` }, { status: 500 });
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Pengumuman berhasil dihapus dari sistem',
+    });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message || 'Gagal memproses penghapusan' }, { status: 500 });
+  }
+}
+
 

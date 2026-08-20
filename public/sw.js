@@ -41,42 +41,54 @@ self.addEventListener('fetch', (event) => {
   if (
     event.request.method !== 'GET' ||
     event.request.url.startsWith('chrome-extension://') ||
-    event.request.url.includes('supabase')
+    event.request.url.includes('supabase') ||
+    event.request.url.includes('/api/')
   ) {
     return;
   }
 
+  // 1. Navigation requests (HTML pages): Network-First
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return response;
+        })
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          if (cached) return cached;
+          const offlinePage = await caches.match('/offline');
+          return offlinePage || new Response('Offline', { status: 503, statusText: 'Offline' });
+        })
+    );
+    return;
+  }
+
+  // 2. Static Assets (_next/static, images, icons, fonts): Cache-First
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
 
-      return fetch(event.request)
-        .then((response) => {
-          // Check if we received a valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          // Don't cache dynamic API routes
-          if (event.request.url.includes('/api/')) {
-            return response;
-          }
-
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
-
+      return fetch(event.request).then((response) => {
+        if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
-        })
-        .catch(() => {
-          // If offline, return offline fallback page for navigation requests
-          if (event.request.mode === 'navigate') {
-            return caches.match('/offline');
-          }
+        }
+
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
         });
+
+        return response;
+      });
     })
   );
 });

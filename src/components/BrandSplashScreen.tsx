@@ -6,23 +6,30 @@ import { Ship, Sparkles } from 'lucide-react';
 
 export default function BrandSplashScreen() {
   const [progress, setProgress] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Simulate loading progress
-    const duration = 1200; // 1.2 seconds loading
-    const interval = 20; // update every 20ms
+    // Only show once per session for maximum speed
+    const alreadyShown = typeof window !== 'undefined' && sessionStorage.getItem('geoattend_splash_shown');
+    if (alreadyShown) {
+      return;
+    }
+
+    setVisible(true);
+    sessionStorage.setItem('geoattend_splash_shown', 'true');
+
+    // Fast loading progress animation (~400ms)
+    const duration = 400;
+    const interval = 20;
     const step = 100 / (duration / interval);
 
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          // Trigger fade out
-          setTimeout(() => setFadeOut(true), 100);
-          // Remove from DOM after fade out transition (500ms)
-          setTimeout(() => setVisible(false), 600);
+          setTimeout(() => setFadeOut(true), 50);
+          setTimeout(() => setVisible(false), 300);
           return 100;
         }
         return prev + step;
@@ -32,11 +39,17 @@ export default function BrandSplashScreen() {
     return () => clearInterval(timer);
   }, []);
 
+  const handleDismiss = () => {
+    setFadeOut(true);
+    setTimeout(() => setVisible(false), 200);
+  };
+
   if (!visible) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-gradient-to-br from-[#03045E] via-[#0077B6] to-[#0A57A4] transition-opacity duration-500 ease-in-out ${
+      onClick={handleDismiss}
+      className={`fixed inset-0 z-[9999] cursor-pointer flex flex-col items-center justify-center bg-gradient-to-br from-[#03045E] via-[#0077B6] to-[#0A57A4] transition-opacity duration-300 ease-in-out ${
         fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -55,7 +68,7 @@ export default function BrandSplashScreen() {
             alt="Pertamina Trans Kontinental"
             width={350}
             height={90}
-            className="drop-shadow-2xl relative z-10"
+            className="drop-shadow-2xl relative z-10 w-auto h-auto max-w-full"
             priority
           />
           <Sparkles className="absolute -top-4 -right-4 w-6 h-6 text-[#90E0EF] animate-sparkle" />
