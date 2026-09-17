@@ -78,7 +78,7 @@ export default function ReportsPage() {
     const result = await saveManualAttendance(data);
     if (result.success) {
       toast.success(result.message || 'Berhasil menyimpan absensi');
-      load(from, to, status, 1, search);
+      load(from, to, status, page, search);
     } else {
       throw new Error(result.error || 'Failed to save');
     }

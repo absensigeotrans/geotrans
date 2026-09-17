@@ -30,7 +30,12 @@ export function ManualAttendanceModal({ isOpen, onClose, onSave, initialData }: 
 
   useEffect(() => {
     if (isOpen) {
-      loadEmployees();
+      // Ponytail optimization: Only fetch employee list when creating a new record.
+      // In edit mode, employee is fixed and cannot be changed.
+      if (!initialData) {
+        loadEmployees();
+      }
+
       if (initialData) {
         setUserId(initialData.user_id || '');
         

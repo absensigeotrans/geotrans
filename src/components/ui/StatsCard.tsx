@@ -5,34 +5,84 @@ interface StatsCardProps {
   value: number | string | React.ReactNode;
   label: string;
   trend?: string | React.ReactNode;
+  subtitle?: string;
   color?: 'blue' | 'green' | 'yellow' | 'red' | 'purple' | 'gray' | 'orange';
 }
 
-const colorMap = {
-  blue: { bg: 'bg-blue-100', text: 'text-blue-600', accent: 'border-blue-500' },
-  green: { bg: 'bg-green-100', text: 'text-green-600', accent: 'border-green-500' },
-  yellow: { bg: 'bg-yellow-100', text: 'text-yellow-600', accent: 'border-yellow-500' },
-  red: { bg: 'bg-red-100', text: 'text-red-600', accent: 'border-red-500' },
-  purple: { bg: 'bg-purple-100', text: 'text-purple-600', accent: 'border-purple-500' },
-  gray: { bg: 'bg-slate-100', text: 'text-slate-600', accent: 'border-slate-500' },
-  orange: { bg: 'bg-orange-100', text: 'text-orange-600', accent: 'border-orange-500' },
+const colorStyles: Record<string, { iconBg: string; iconColor: string; badgeBorder: string }> = {
+  blue: {
+    iconBg: 'bg-blue-50/80 text-blue-700 border-blue-100',
+    iconColor: 'text-blue-700',
+    badgeBorder: 'border-blue-200',
+  },
+  green: {
+    iconBg: 'bg-emerald-50/80 text-emerald-700 border-emerald-100',
+    iconColor: 'text-emerald-700',
+    badgeBorder: 'border-emerald-200',
+  },
+  yellow: {
+    iconBg: 'bg-amber-50/80 text-amber-700 border-amber-100',
+    iconColor: 'text-amber-700',
+    badgeBorder: 'border-amber-200',
+  },
+  red: {
+    iconBg: 'bg-rose-50/80 text-rose-700 border-rose-100',
+    iconColor: 'text-rose-700',
+    badgeBorder: 'border-rose-200',
+  },
+  purple: {
+    iconBg: 'bg-indigo-50/80 text-indigo-700 border-indigo-100',
+    iconColor: 'text-indigo-700',
+    badgeBorder: 'border-indigo-200',
+  },
+  gray: {
+    iconBg: 'bg-slate-50 text-slate-700 border-slate-200',
+    iconColor: 'text-slate-700',
+    badgeBorder: 'border-slate-200',
+  },
+  orange: {
+    iconBg: 'bg-orange-50/80 text-orange-700 border-orange-100',
+    iconColor: 'text-orange-700',
+    badgeBorder: 'border-orange-200',
+  },
 };
 
-export function StatsCard({ icon, value, label, trend, color = 'blue' }: StatsCardProps) {
-  const { bg, text } = colorMap[color];
+export function StatsCard({
+  icon,
+  value,
+  label,
+  trend,
+  subtitle,
+  color = 'blue',
+}: StatsCardProps) {
+  const currentStyle = colorStyles[color] || colorStyles.blue;
 
   return (
-    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5 flex items-center gap-4 hover:shadow-lg transition-shadow duration-200 relative overflow-hidden group">
-      {/* Gradient accent bar */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-red-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className={`p-3 rounded-xl ${bg} relative z-10`}>
-        <span className={`block ${text}`}>{icon}</span>
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all duration-200 p-4 sm:p-5 flex flex-col justify-between">
+      <div className="flex items-start justify-between gap-3 mb-2">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+            {label}
+          </p>
+        </div>
+        <div className={`p-2.5 rounded-lg border ${currentStyle.iconBg} shrink-0 flex items-center justify-center`}>
+          <span className="w-5 h-5 flex items-center justify-center">{icon}</span>
+        </div>
       </div>
-      <div className="flex-1 min-w-0 relative z-10">
-        <p className="text-2xl font-bold text-gray-900 truncate">{value}</p>
-        <p className="text-sm text-gray-500">{label}</p>
-        {trend && (
-          <p className="text-xs text-gray-400 mt-0.5">{trend}</p>
+
+      <div className="mt-1">
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <span className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            {value}
+          </span>
+          {trend && (
+            <div className="inline-flex items-center">
+              {trend}
+            </div>
+          )}
+        </div>
+        {subtitle && (
+          <p className="text-xs text-slate-400 mt-1 font-medium">{subtitle}</p>
         )}
       </div>
     </div>

@@ -417,7 +417,7 @@ export function useReports() {
 
   // ── Simpan absensi manual (Insert atau Update) ────────────────────────────
   const saveManualAttendance = useCallback(async (data: Partial<AttendanceWithProfile>) => {
-    setLoading(true);
+    // Ponytail: Do not toggle global hook loading so the table UI doesn't freeze/flicker
     setError(null);
     try {
       const payload: any = {
@@ -453,8 +453,6 @@ export function useReports() {
       console.error('saveManualAttendance catch error:', msg);
       setError(msg);
       return { success: false, error: msg };
-    } finally {
-      setLoading(false);
     }
   }, []);
 

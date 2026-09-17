@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useCallback } from 'react';
+import { Download, AlertCircle } from 'lucide-react';
 
 interface ChartCardProps {
   title: string;
@@ -11,7 +12,14 @@ interface ChartCardProps {
   onExport?: () => void;
 }
 
-export function ChartCard({ title, subtitle, children, loading, error, onExport }: ChartCardProps) {
+export function ChartCard({
+  title,
+  subtitle,
+  children,
+  loading,
+  error,
+  onExport,
+}: ChartCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleExport = useCallback(async () => {
@@ -52,40 +60,44 @@ export function ChartCard({ title, subtitle, children, loading, error, onExport 
   }, [title, onExport]);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border p-5" ref={cardRef}>
-      <div className="flex items-start justify-between mb-4">
+    <div
+      className="bg-white rounded-xl border border-slate-200/90 shadow-xs hover:border-slate-300 transition-all duration-200 p-4 sm:p-5 flex flex-col justify-between"
+      ref={cardRef}
+    >
+      <div className="flex items-start justify-between gap-3 mb-4 pb-3 border-b border-slate-100">
         <div>
-          <h3 className="font-semibold text-gray-900">{title}</h3>
+          <h3 className="text-sm font-semibold text-slate-900 tracking-tight">{title}</h3>
           {subtitle && (
-            <p className="text-sm text-gray-500 mt-0.5">{subtitle}</p>
+            <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>
           )}
         </div>
         <button
           onClick={handleExport}
           disabled={loading || !!error}
-          className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          title="Export as PNG"
+          className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+          title="Export grafik ke format PNG"
+          aria-label="Export grafik PNG"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
+          <Download className="w-4 h-4" />
         </button>
       </div>
 
       {loading && (
-        <div className="flex items-center justify-center h-48 text-gray-400">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
+        <div className="flex flex-col items-center justify-center h-52 text-slate-400 gap-2">
+          <div className="w-7 h-7 rounded-full border-2 border-slate-200 border-t-blue-600 animate-spin" />
+          <span className="text-xs text-slate-400">Memuat visualisasi data...</span>
         </div>
       )}
 
       {error && (
-        <div className="flex items-center justify-center h-48 text-red-500 bg-red-50 rounded-lg">
-          <p className="text-sm">{error}</p>
+        <div className="flex items-center justify-center gap-2 h-52 text-rose-600 bg-rose-50/60 rounded-lg p-4 border border-rose-100">
+          <AlertCircle className="w-4 h-4 shrink-0" />
+          <p className="text-xs font-medium">{error}</p>
         </div>
       )}
 
       {!loading && !error && (
-        <div className="w-full" style={{ minHeight: 200 }}>
+        <div className="w-full" style={{ minHeight: 220 }}>
           {children}
         </div>
       )}
